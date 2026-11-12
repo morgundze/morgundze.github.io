@@ -89,6 +89,24 @@ textarea { width: 100%; min-height: 60px; resize: vertical; font: inherit; font-
 .c-burg .no, .c-burg h2 em { color: var(--burgundy); }
 .intro { max-width: 62ch; }
 
+/* система: 7 шагов по кругу */
+.circle { position: relative; width: 100%; max-width: 640px; aspect-ratio: 1; margin: 0 auto; }
+.ring { position: absolute; inset: 14%; border: 1.5px solid var(--rule); border-radius: 50%; }
+.core { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); text-align: center; width: 40%; display: grid; gap: 4px; }
+.core b { font-family: var(--display); font-style: italic; font-weight: 400; font-size: clamp(44px, 8vw, 76px); line-height: .95; color: var(--burgundy); }
+.core span { font-family: var(--display); font-size: clamp(18px, 2.6vw, 24px); line-height: 1.15; }
+.node { position: absolute; transform: translate(-50%, -50%); width: 26%; text-align: center; background: var(--paper); padding: 6px 2px; display: grid; gap: 2px; }
+.node .k { font-family: var(--label); font-weight: 600; font-size: 14px; letter-spacing: .08em; color: var(--pink); }
+.node h3 { font-size: clamp(20px, 3.2vw, 30px); line-height: 1.05; }
+.node p { font-size: clamp(12px, 1.6vw, 14px); line-height: 1.3; color: var(--muted); }
+@media (max-width: 600px) {
+  .circle { aspect-ratio: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .ring { display: none; }
+  .core { position: static; transform: none; width: auto; grid-column: 1 / -1; background: var(--card); padding: 18px; }
+  .node { position: static; transform: none; width: auto; text-align: left; background: var(--card); padding: 14px; }
+  .node:last-child { grid-column: 1 / -1; }
+}
+
 /* кейсы */
 .cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; }
 .case { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 14px; align-items: start; border-top: 1px solid var(--rule); padding-top: 14px; }
@@ -183,8 +201,24 @@ td.src { font-size: 13px; color: var(--muted); width: 26%; }
       </div>
     </header>
 
+    <section class="sec c-burg" aria-labelledby="s0">
+      <div class="sechead"><span class="no">01</span><span class="lab">система</span><h2 id="s0">каждый блог или бренд проходит <em>по одной системе</em></h2></div>
+      <p class="intro">семь шагов — одни и те же для Skims, Dior и вашего блога.</p>
+      <div class="circle" role="list" aria-label="семь шагов маркетинг-системы">
+        <div class="ring" aria-hidden="true"></div>
+        <div class="core"><b>бренд</b><span>и твой <em>блог</em> тоже</span></div>
+        <div class="node" role="listitem" style="left:50%;top:14%"><span class="k">01</span><h3>позиция</h3><p>за что меня выбирают?</p></div>
+        <div class="node" role="listitem" style="left:78.1%;top:27.6%"><span class="k">02</span><h3>лицо</h3><p>кто за брендом?</p></div>
+        <div class="node" role="listitem" style="left:85.1%;top:58%"><span class="k">03</span><h3>код</h3><p>по чему узнают без логотипа?</p></div>
+        <div class="node" role="listitem" style="left:65.6%;top:82.4%"><span class="k">04</span><h3>эмоция</h3><p>что чувствуют рядом?</p></div>
+        <div class="node" role="listitem" style="left:34.4%;top:82.4%"><span class="k">05</span><h3>повод</h3><p>почему говорят сегодня?</p></div>
+        <div class="node" role="listitem" style="left:14.9%;top:58%"><span class="k">06</span><h3>комьюнити</h3><p>где «свои»?</p></div>
+        <div class="node" role="listitem" style="left:21.9%;top:27.6%"><span class="k">07</span><h3>реакция</h3><p>как отвечают на тренд и хейт?</p></div>
+      </div>
+    </section>
+
     <section class="sec c-olive" aria-labelledby="s1">
-      <div class="sechead"><span class="no">01</span><span class="lab">кейсы</span><h2 id="s1">как это работает на <em>моих рилсах</em></h2></div>
+      <div class="sechead"><span class="no">02</span><span class="lab">кейсы</span><h2 id="s1">как это работает на <em>моих рилсах</em></h2></div>
       <div class="cases">
         <div class="case">
           <div class="pics"><img src="img/DZz3FDiJQnn.jpg" alt="кадр рилса про old money" loading="lazy"></div>
@@ -226,7 +260,7 @@ td.src { font-size: 13px; color: var(--muted); width: 26%; }
     </section>
 
     <section class="sec c-pink" aria-labelledby="s2">
-      <div class="sechead"><span class="no">02</span><span class="lab">разбор</span><h2 id="s2">один рилс — <em>по шагам</em></h2></div>
+      <div class="sechead"><span class="no">03</span><span class="lab">разбор</span><h2 id="s2">один рилс — <em>по шагам</em></h2></div>
       <p class="intro">как из тренда получился мой самый просматриваемый рилс. по этим же шагам я делаю каждый рилс на тренде.</p>
       <div class="walk">
         <div class="reel"><img src="img/DZz3FDiJQnn.jpg" alt="кадр рилса про old money" loading="lazy"><div class="views">228 817 просмотров<br>1 286 комментариев</div></div>
@@ -245,7 +279,7 @@ td.src { font-size: 13px; color: var(--muted); width: 26%; }
     </section>
 
     <section class="sec c-blue" aria-labelledby="s3">
-      <div class="sechead"><span class="no">03</span><span class="lab">почему это работает</span><h2 id="s3">какому тренду соответствует тема <em>личного или коммерческого бренда</em></h2></div>
+      <div class="sechead"><span class="no">04</span><span class="lab">почему это работает</span><h2 id="s3">какому тренду соответствует тема <em>личного или коммерческого бренда</em></h2></div>
       <p class="intro">тренды бывают двух видов. оба помогают попасть в то, что происходит с аудиторией, — и вашему бизнесу, и вашему личному бренду.</p>
       <div class="pair">
         <div class="p1"><span class="lab">живёт дни</span><h3>инфоповод</h3><p>новость недели: звезда или большой бренд, неожиданный ход, цифра</p></div>
@@ -273,7 +307,7 @@ td.src { font-size: 13px; color: var(--muted); width: 26%; }
     </section>
 
     <section class="finale" aria-labelledby="s4">
-      <span class="lab">04 · лекция 14 ноября</span>
+      <span class="lab">05 · лекция 14 ноября</span>
       <div class="row">
         <div style="display:grid;gap:14px">
           <h2 id="s4">как применить тренды к своему <em>личному бренду</em></h2>
