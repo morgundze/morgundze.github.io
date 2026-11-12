@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>как попадать в аудиторию через тренды — Надежда Моргун</title>
+<meta name="description" content="шесть моих рилсов набрали больше миллиона просмотров. как я делаю контент на трендах — разбор на моих рилсах и пять тенденций, на которых растёт контент.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="как попадать в аудиторию через тренды">
+<meta property="og:description" content="шесть моих рилсов набрали больше миллиона просмотров. как я делаю контент на трендах — разбор на моих рилсах и пять тенденций, на которых растёт контент.">
+<meta property="og:url" content="https://morgundze.github.io/trends/">
+<meta property="og:image" content="https://morgundze.github.io/trends/img/cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Oswald:wght@500;600&family=Golos+Text:wght@400;500;600&display=swap">
+<style>
+/* layout: статья в стиле её воркбука «личный бренд» — бумага, Playfair + Oswald + Golos, у каждого раздела свой акцент, фото из Pinterest; одна светлая тема, как печатный воркбук */
+:root {
+  --paper: #f3efe9; --ink: #141414; --muted: #6b645c; --rule: rgba(20,20,20,.16); --card: #fbf9f6;
+  --pink: #e8368f; --olive: #9aa23a; --lilac: #c3a6e0; --blue: #2a17c4; --burgundy: #6e2a1f; --black: #151413; --cream: #f3efe9;
+  --display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --label: 'Oswald', 'Arial Narrow', 'Helvetica Neue', sans-serif;
+  --body: 'Golos Text', -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 24px 80px; }
+.wrap { max-width: 920px; margin: 0 auto; display: grid; gap: 64px; }
+.wrap, .sec, .cover { grid-template-columns: minmax(0, 1fr); }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; letter-spacing: -.01em; }
+em { font-style: italic; }
+p { margin: 0; }
+a { color: inherit; text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible, textarea:focus-visible { outline: 2px solid var(--pink); outline-offset: 2px; }
+.lab { font-family: var(--label); font-weight: 500; text-transform: uppercase; letter-spacing: .12em; font-size: 13px; }
+img { max-width: 100%; display: block; }
+
+/* ---------- блок выбора ---------- */
+.review { background: var(--card); border: 1px solid var(--rule); border-radius: 12px; padding: 20px; display: grid; gap: 16px; }
+.review h2 { font-size: 30px; }
+.review .muted { color: var(--muted); font-size: 15px; }
+.status { font-size: 14px; color: var(--muted); }
+.heropick { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.hp { all: unset; box-sizing: border-box; cursor: pointer; border: 1px solid var(--rule); border-radius: 10px; padding: 12px 14px; background: var(--paper); display: grid; gap: 4px; }
+.hp[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.hp:focus-visible { outline: 2px solid var(--pink); outline-offset: 2px; }
+.hp b { font-family: var(--label); font-weight: 500; letter-spacing: .08em; text-transform: uppercase; font-size: 14px; }
+.hp span { font-size: 13px; opacity: .75; }
+.fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.fields label { font-size: 14px; color: var(--muted); display: grid; gap: 6px; }
+textarea { width: 100%; min-height: 60px; resize: vertical; font: inherit; font-size: 15px; color: var(--ink); background: var(--paper);
+  border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; }
+
+/* ---------- обложка ---------- */
+.topbar { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--rule); padding-bottom: 10px; }
+.cover { display: grid; gap: 22px; }
+.cover h1 { font-size: clamp(46px, 9vw, 96px); line-height: .98; }
+.cover h1 em { color: var(--pink); }
+.hero { display: none; }
+.hero.on { display: grid; }
+.hero-a { grid-template-columns: 1.4fr 1fr; gap: 10px; }
+.hero-a .big { aspect-ratio: 4 / 5; object-fit: cover; width: 100%; height: 100%; }
+.hero-a .stack { display: grid; gap: 10px; grid-template-rows: 1fr 1fr; }
+.statbox { background: var(--pink); color: #fff; padding: 18px; display: grid; align-content: end; gap: 6px; min-width: 0; }
+.statbox .num { font-family: var(--label); font-weight: 600; font-size: clamp(34px, 6vw, 56px); line-height: 1; font-variant-numeric: tabular-nums; }
+.statbox p { font-size: 15px; line-height: 1.35; }
+.hero-a .stack img { width: 100%; height: 100%; object-fit: cover; min-height: 0; }
+.hero-b { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.hero-b img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.hero-b .statbox { grid-column: span 2; }
+.hero-c { grid-template-columns: 1fr; gap: 10px; }
+.hero-c .reelrow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+.hero-c .reelrow img { aspect-ratio: 9 / 16; object-fit: cover; width: 100%; }
+.hero-c .statbox { align-content: center; }
+.lead { display: grid; gap: 12px; font-size: 19px; max-width: 62ch; }
+.lead .sign { font-family: var(--display); font-style: italic; font-size: 20px; }
+.todo { background: #fff3a6; padding: 0 4px; border-radius: 3px; }
+
+/* ---------- разделы ---------- */
+.sec { display: grid; gap: 22px; }
+.sechead { display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; align-items: end; }
+.sechead .no { font-family: var(--label); font-weight: 600; font-size: clamp(64px, 11vw, 104px); line-height: .85; grid-row: span 2; }
+.sechead .lab { color: var(--ink); }
+.sechead h2 { font-size: clamp(32px, 5.5vw, 52px); line-height: 1.05; }
+.c-olive .no, .c-olive h2 em { color: var(--olive); }
+.c-pink .no, .c-pink h2 em { color: var(--pink); }
+.c-blue .no, .c-blue h2 em { color: var(--blue); }
+.c-burg .no, .c-burg h2 em { color: var(--burgundy); }
+.intro { max-width: 62ch; }
+
+/* кейсы */
+.cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; }
+.case { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 14px; align-items: start; border-top: 1px solid var(--rule); padding-top: 14px; }
+.case .pics { display: grid; gap: 6px; }
+.case .pics img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; }
+.case h3 { font-size: 23px; line-height: 1.15; }
+.tag { display: inline-block; font-family: var(--label); font-weight: 500; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; padding: 3px 7px; color: #fff; }
+.t-news { background: var(--pink); } .t-trend { background: var(--olive); } .t-react { background: var(--blue); }
+.views { font-family: var(--label); font-weight: 500; font-size: 15px; letter-spacing: .04em; font-variant-numeric: tabular-nums; }
+.case dl { margin: 0; display: grid; gap: 6px; font-size: 14.5px; line-height: 1.4; }
+.case dt { font-family: var(--label); font-weight: 500; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.case dd { margin: 0 0 4px; }
+.case a { font-size: 14px; }
+
+/* шаги одного рилса */
+.walk { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 24px; align-items: start; }
+.walk .reel { display: grid; gap: 8px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); }
+.walk .reel img { aspect-ratio: 9 / 16; object-fit: cover; width: 100%; }
+.steps { display: grid; gap: 0; }
+.step { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 14px; padding: 18px 0; border-top: 1px solid var(--rule); }
+.step .n { font-family: var(--label); font-weight: 600; font-size: 44px; line-height: .9; color: var(--pink); }
+.step h3 { font-size: 24px; line-height: 1.15; }
+.step p { margin-top: 6px; }
+.step q { font-family: var(--display); font-style: italic; font-size: 19px; quotes: "«" "»"; }
+.lilac { background: var(--lilac); padding: 22px; display: grid; gap: 8px; }
+.lilac .lab { color: var(--ink); }
+.lilac p { font-family: var(--display); font-style: italic; font-size: 22px; line-height: 1.3; }
+
+/* тенденции */
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.pair > div { padding: 20px; display: grid; gap: 6px; align-content: start; }
+.pair .p1 { background: var(--pink); color: #fff; }
+.pair .p2 { background: var(--olive); color: var(--ink); }
+.pair h3 { font-size: 28px; }
+.tablebox { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 660px; font-size: 15px; }
+th { text-align: left; font-family: var(--label); font-weight: 500; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding: 10px 12px 8px 0; border-bottom: 1px solid var(--ink); }
+td { vertical-align: top; padding: 14px 12px 14px 0; border-bottom: 1px solid var(--rule); }
+td:first-child { font-family: var(--display); font-size: 21px; line-height: 1.15; width: 21%; }
+td.src { font-size: 13px; color: var(--muted); width: 26%; }
+.stripe { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.stripe img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+
+/* финал */
+.finale { background: var(--black); color: var(--cream); padding: 30px 26px; display: grid; gap: 18px; }
+.finale .lab { color: var(--pink); }
+.finale h2 { font-size: clamp(32px, 5.5vw, 50px); line-height: 1.05; }
+.finale h2 em { color: var(--pink); }
+.finale .row { display: grid; grid-template-columns: minmax(0, 1fr) 180px; gap: 20px; align-items: end; }
+.finale .row img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.banner { background: var(--pink); color: #fff; padding: 18px 20px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: end; }
+.banner p { font-family: var(--display); font-style: italic; font-size: 21px; line-height: 1.3; max-width: 44ch; }
+.banner .lab { color: #fff; text-align: right; }
+
+@media (max-width: 720px) {
+  .cases { grid-template-columns: 1fr; }
+  .walk { grid-template-columns: 1fr; }
+  .walk .reel { position: static; grid-template-columns: 140px 1fr; align-items: end; }
+  .pair, .fields { grid-template-columns: 1fr; }
+  .heropick { grid-template-columns: 1fr; }
+  .hero-a { grid-template-columns: 1fr 1fr; }
+  .hero-b { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-c .reelrow { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .finale .row { grid-template-columns: 1fr; }
+  .finale .row img { max-width: 180px; }
+  .stripe { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+</style>
+<style>body { margin: 0; }</style>
+</head>
+<body>
+<article class="wrap" style="gap:72px;max-width:920px;margin:0 auto">
+    <header class="cover">
+      <div class="topbar"><span class="lab">статья · тренды</span><span class="lab">@morgundze</span></div>
+      <h1>как попадать в аудиторию через <em>тренды</em></h1>
+
+            <div class="hero hero-b on" data-hero="b">
+        <img src="img/pin/18.jpg" alt="девушка с кольцом">
+        <img src="img/pin/02.jpg" alt="розовая сумка Birkin">
+        <img src="img/pin/15.jpg" alt="балетки на брусчатке">
+        <img src="img/pin/19.jpg" alt="розовый столик с книгой">
+        <div class="statbox"><div class="num">1 072 091</div><p>просмотр у шести моих рилсов</p></div>
+        <img src="img/pin/13.jpg" alt="надпись goal: make art, be hot.">
+        <img src="img/pin/01.jpg" alt="надпись wait, im cool asf.">
+      </div>
+      
+      <div class="lead">
+        <p>шесть моих рилсов набрали больше миллиона просмотров, а за несколько месяцев ко мне пришло 12 000 аудитории.</p>
+        <p>и в первую очередь потому, что я делала контент, основанный на трендах.</p>
+        <p>когда вы попадаете в тренд, вы попадаете в то, что происходит с вашей аудиторией прямо сейчас. это работает и для коммерческих брендов, и для личных.</p>
+        <p class="sign">Надежда Моргун</p>
+      </div>
+    </header>
+
+    <section class="sec c-olive" aria-labelledby="s1">
+      <div class="sechead"><span class="no">01</span><span class="lab">кейсы</span><h2 id="s1">как это работает на <em>моих рилсах</em></h2></div>
+      <div class="cases">
+        <div class="case">
+          <div class="pics"><img src="img/DZz3FDiJQnn.jpg" alt="кадр рилса про old money" loading="lazy"></div>
+          <div style="display:grid;gap:8px;min-width:0"><span class="tag t-trend">глобальная тенденция</span><h3>эпохе old money пришёл конец</h3><div class="views">20.06 · 228 817 просмотров</div>
+            <dl><dt>что произошло</dt><dd>Marc Jacobs и Fendi уходят в яркое, вместо однотонной классики — пайетки</dd><dt>как я это назвала</dt><dd>эпоха дофаминовой ебанцы</dd></dl>
+            <a href="https://www.instagram.com/reel/DZz3FDiJQnn/" target="_blank" rel="noopener">смотреть рилс</a></div>
+        </div>
+        <div class="case">
+          <div class="pics"><img src="img/DbdVC09JApS.jpg" alt="кадр рилса про Эконику" loading="lazy"></div>
+          <div style="display:grid;gap:8px;min-width:0"><span class="tag t-news">инфоповод</span><h3>Эконика и социальный контекст</h3><div class="views">31.07 · 212 279 просмотров</div>
+            <dl><dt>что произошло</dt><dd>съёмка с Роузи — и волна возмущения в комментариях</dd><dt>как я это назвала</dt><dd>социальный контекст: «как на похоронах включить Джастина Бибера»</dd></dl>
+            <a href="https://www.instagram.com/reel/DbdVC09JApS/" target="_blank" rel="noopener">смотреть рилс</a></div>
+        </div>
+        <div class="case">
+          <div class="pics"><img src="img/DbGSLmsJj-t.jpg" alt="кадр рилса про Skims" loading="lazy"></div>
+          <div style="display:grid;gap:8px;min-width:0"><span class="tag t-news">инфоповод</span><h3>Skims: купальник «подходит всем»</h3><div class="views">22.07 · 170 378 просмотров</div>
+            <dl><dt>что произошло</dt><dd>Fits Everybody — и «гора хейта»</dd><dt>как я это назвала</dt><dd>провокационный маркетинг: бесплатно даёт огромный охват</dd></dl>
+            <a href="https://www.instagram.com/reel/DbGSLmsJj-t/" target="_blank" rel="noopener">смотреть рилс</a></div>
+        </div>
+        <div class="case">
+          <div class="pics"><img src="img/DfbpVIuOemS.jpg" alt="кадр рилса про ИИ" loading="lazy"></div>
+          <div style="display:grid;gap:8px;min-width:0"><span class="tag t-trend">инфоповод + тенденция</span><h3>бренды объявили войну ИИ</h3><div class="views">7.11 · 139 186 просмотров</div>
+            <dl><dt>что произошло</dt><dd>Prada, Porsche и Loewe делают рекламу руками</dd><dt>что это говорит о людях</dt><dd>«везде ИИ, а люди этому не доверяют»</dd></dl>
+            <a href="https://www.instagram.com/reel/DfbpVIuOemS/" target="_blank" rel="noopener">смотреть рилс</a></div>
+        </div>
+        <div class="case">
+          <div class="pics"><img src="img/DYjyB8rJkiy.jpg" alt="кадр рилса про Миронову" loading="lazy"></div>
+          <div style="display:grid;gap:8px;min-width:0"><span class="tag t-news">инфоповод</span><h3>стаканчики Насти Мироновой</h3><div class="views">20.05 · 123 012 просмотров</div>
+            <dl><dt>что произошло</dt><dd>новые стаканчики — и её снова отменяют</dd><dt>как я это назвала</dt><dd>провокационный маркетинг: контент создаёт не она, а за неё</dd></dl>
+            <a href="https://www.instagram.com/reel/DYjyB8rJkiy/" target="_blank" rel="noopener">смотреть рилс</a></div>
+        </div>
+        <div class="case">
+          <div class="pics"><img src="img/DYSDlqhIKVy.jpg" alt="кадр рилса про UGC" loading="lazy"></div>
+          <div style="display:grid;gap:8px;min-width:0"><span class="tag t-react">реакция на тренд</span><h3>UGC-креаторы — мыльный пузырь</h3><div class="views">13.05 · 35 935 просмотров · 644 комментария</div>
+            <dl><dt>что произошло</dt><dd>UGC-креатор стал отдельной профессией</dd><dt>моя реакция</dt><dd>бизнесу — амбассадоры, креаторам — свой личностный блог</dd></dl>
+            <a href="https://www.instagram.com/reel/DYSDlqhIKVy/" target="_blank" rel="noopener">смотреть рилс</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec c-pink" aria-labelledby="s2">
+      <div class="sechead"><span class="no">02</span><span class="lab">разбор</span><h2 id="s2">один рилс — <em>по шагам</em></h2></div>
+      <p class="intro">как из тренда получился мой самый просматриваемый рилс. по этим же шагам я делаю каждый рилс на тренде.</p>
+      <div class="walk">
+        <div class="reel"><img src="img/DZz3FDiJQnn.jpg" alt="кадр рилса про old money" loading="lazy"><div class="views">228 817 просмотров<br>1 286 комментариев</div></div>
+        <div class="steps">
+          <div class="step"><span class="n">1</span><div><h3>заметить тренд</h3><p>Marc Jacobs перезапускает косметику в ярких упаковках, Fendi возвращает Baguette из 2000-х — <q>ни одной однотонной классической сумки</q></p></div></div>
+          <div class="step"><span class="n">2</span><div><h3>понять, что происходит с людьми</h3><p><q>те, кто раньше хотел aesthetic вайба, всё чаще выбирают розовые юбки с пайетками, футболки со смешными принтами</q></p></div></div>
+          <div class="step"><span class="n">3</span><div><h3>назвать это</h3><p><q>эпохе old money пришёл конец</q>, а мы входим в эпоху дофаминовой ебанцы</p></div></div>
+          <div class="step"><span class="n">4</span><div><h3>связать со своей темой</h3><p>для меня это маркетинг: <q>новый тренд, который позволит забрать всё внимание аудитории на себя</q> — для бизнеса и личных брендов</p></div></div>
+          <div class="step"><span class="n">5</span><div><h3>дать свою реакцию</h3><p>и применить самой: <q>монтаж у меня тоже в стиле дофаминовой ебанцы, если что</q></p></div></div>
+        </div>
+      </div>
+      <div class="lilac">
+        <span class="lab">на лекции</span>
+        <p>14 ноября я дам формулу, по которой вы сможете раскрывать тренды, инфоповоды и глобальные тенденции в своих рилсах.</p>
+      </div>
+    </section>
+
+    <section class="sec c-blue" aria-labelledby="s3">
+      <div class="sechead"><span class="no">03</span><span class="lab">почему это работает</span><h2 id="s3">почему у одних заходит тема денег, а у других — <em>здоровья</em></h2></div>
+      <p class="intro">тренды бывают двух видов. оба помогают попасть в то, что происходит с аудиторией, — и вашему бизнесу, и вашему личному бренду.</p>
+      <div class="pair">
+        <div class="p1"><span class="lab">живёт дни</span><h3>инфоповод</h3><p>новость недели: звезда или большой бренд, неожиданный ход, цифра</p></div>
+        <div class="p2"><span class="lab">живёт годы</span><h3>глобальная тенденция</h3><p>то, что меняется в людях. на ней растут целые темы</p></div>
+      </div>
+      <p class="intro">вот пять тенденций, на которых растёт контент прямо сейчас.</p>
+      <div class="tablebox">
+        <table>
+          <thead><tr><th>тенденция</th><th>что с людьми</th><th>на этом растут темы</th><th>цифра</th></tr></thead>
+          <tbody>
+            <tr><td>деньги расслоились</td><td>считают каждую покупку, уходят из «середины» в дешёвое или в премиум</td><td>деньги, финансы, оправданная цена, resale</td><td class="src">3 из 4 внимательнее проверяют, стоит ли покупка своих денег — Innova, 15.10.2026</td></tr>
+            <tr><td>wellness</td><td>заботятся о себе, хотят долго жить и хорошо выглядеть</td><td>здоровье, питание, спорт, уход</td><td class="src">траты на wellness в мире в 2027 — больше $2,8 трлн — Euromonitor 2027</td></tr>
+            <tr><td>усталость и стресс</td><td>хотят радости, яркости, облегчения</td><td>little treats, яркое, дофаминовая ебанца</td><td class="src">70% говорят, что маленькие радости важны — Innova, 15.10.2026</td></tr>
+            <tr><td>недоверие к ИИ и рекламе</td><td>ценят живое, ручное, настоящих людей</td><td>личный бренд, ручная работа, люди за брендом</td><td class="src">только 25% помнят рекламу бренда у блогера — Kantar, 15.10.2026</td></tr>
+            <tr><td>одиночество</td><td>ищут своих</td><td>community, клубы, brand community</td><td class="src">70% хотят принадлежать к чему-то большему — WGSN</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="stripe">
+        <img src="img/pin/16.jpg" alt="надпись your aura gets sexier each time you heal" loading="lazy">
+        <img src="img/pin/05.jpg" alt="надпись everything i want wants me more" loading="lazy">
+        <img src="img/pin/10.jpg" alt="кружка wake up sexy as hell again" loading="lazy">
+        <img src="img/pin/08.jpg" alt="надпись diva is my nickname" loading="lazy">
+      </div>
+    </section>
+
+    <section class="finale" aria-labelledby="s4">
+      <span class="lab">04 · лекция 14 ноября</span>
+      <div class="row">
+        <div style="display:grid;gap:14px">
+          <h2 id="s4">как применить тренды к своему <em>личному бренду</em></h2>
+          <p>об этом — на большой лекции «Тренды в маркетинге 2027» 14 ноября в 12:00 по Москве. и там же дам формулу, по которой вы сможете раскрывать тренды, инфоповоды и глобальные тенденции в своих рилсах.</p>
+          <p>присоединиться можно по ссылке <a href="https://t.me/morgundze_marketing_bot">https://t.me/morgundze_marketing_bot</a></p>
+        </div>
+        <img src="img/pin/18.jpg" alt="девушка с кольцом" loading="lazy">
+      </div>
+      <div class="banner"><p>до встречи 14 ноября — приходите со своей темой, разберём, на какой тренд она ложится.</p><span class="lab">Надежда Моргун<br>@morgundze</span></div>
+    </section>
+  </article>
+</body>
+</html>
