@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Формула запуска Rhode — Надежда Моргун</title>
+<meta name="description" content="Как Хейли Бибер делает sold out за неделю — и как украсть эту стратегию себе: в бизнес и в личный бренд. Разбор Надежды Моргун.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Формула запуска Rhode">
+<meta property="og:description" content="Как Хейли Бибер делает sold out за неделю — и как украсть эту стратегию себе: в бизнес и в личный бренд. Разбор Надежды Моргун.">
+<meta property="og:url" content="https://morgundze.github.io/rhode/">
+<meta property="og:image" content="https://morgundze.github.io/rhode/media/hailey-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>body{margin:0}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Oswald:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap">
+<style>
+/* Layout: стиль её воркбука «Формула личного бренда», только в синем — главы идут одна за другой на бумаге,
+   заголовки антиквой с одним словом курсивом, крупные номера, плашки «пример» и «подсказка», фото и ролики к каждому шагу.
+   Один осознанный вид (бумага), без тёмной темы. */
+:root {
+  --paper: #f2eee8;     /* бумага воркбука */
+  --paper-2: #faf8f4;   /* карточка на бумаге */
+  --ink: #17171c;
+  --ink-2: #5f5b57;
+  --blue: #2b22c6;      /* синий из воркбука */
+  --navy: #1b2340;      /* коробка Rhode — плашки «подсказка» */
+  --sky: #dde2f8;       /* светло-синий — плашки «себе» и «пример» */
+  --on-dark: #f4f2ee;
+  --on-dark-2: #b4bbd6;
+  --line: rgba(23, 23, 28, .16);
+
+  --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --cond: "Oswald", "Arial Narrow", Arial, sans-serif;
+  --body: "Golos Text", "Helvetica Neue", Arial, sans-serif;
+
+  --w: 620px;
+  --gut-l: max(16px, env(safe-area-inset-left, 0px));
+  --gut-r: max(16px, env(safe-area-inset-right, 0px));
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--body); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img, video { max-width: 100%; display: block; }
+a { color: inherit; }
+p { margin: 0; }
+h1, h2, h3 { margin: 0; font-weight: 400; text-wrap: balance; }
+
+/* ---------- главы ---------- */
+.page { padding-block: 20px 40px; padding-left: var(--gut-l); padding-right: var(--gut-r); }
+.in { max-width: var(--w); margin: 0 auto; display: grid; gap: 20px; }
+.in > * { min-width: 0; }
+.top {
+  display: flex; justify-content: space-between; gap: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--ink);
+  font-family: var(--cond); font-weight: 500; font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+}
+.label { font-family: var(--cond); font-weight: 500; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+
+h1 { font-family: var(--serif); font-size: clamp(46px, 13.5vw, 74px); line-height: .98; letter-spacing: -.01em; }
+h2 { font-family: var(--serif); font-size: clamp(31px, 8.6vw, 44px); line-height: 1.04; }
+h3 { font-family: var(--serif); font-size: 23px; line-height: 1.15; }
+h1 em, h2 em, h3 em { font-style: italic; color: var(--blue); }
+.head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 14px; align-items: end; }
+.head .no { font-family: var(--cond); font-weight: 500; font-size: 66px; line-height: .8; color: var(--blue); }
+.head .label { padding-bottom: 4px; }
+.head h2 { grid-column: 1 / -1; margin-top: 12px; }
+.lead { font-size: 17px; line-height: 1.55; }
+.muted { color: var(--ink-2); }
+.cap { font-size: 13px; line-height: 1.45; color: var(--ink-2); }
+
+/* ---------- обложка ---------- */
+.collage { display: grid; grid-template-columns: 1.15fr 1fr; gap: 8px; }
+.collage .tall { grid-row: span 2; aspect-ratio: 3 / 5; max-width: 100%; overflow: hidden; background: var(--navy); }
+.collage .tall img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 30%; }
+.collage .sq { aspect-ratio: 1 / 1; max-width: 100%; overflow: hidden; }
+.collage .sq img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; }
+.sticker {
+  background: var(--blue); color: #fff; display: grid; place-items: center; text-align: center; padding: 10px;
+  font-family: var(--cond); font-weight: 500; font-size: clamp(19px, 5.4vw, 27px); line-height: 1.05;
+}
+.sign { text-align: right; display: grid; gap: 2px; justify-self: end; }
+.sign i { font-family: var(--serif); font-size: 17px; }
+
+/* ---------- цифры ---------- */
+.nums { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.num { background: var(--paper-2); border: 1px solid var(--line); padding: 14px 13px 13px; display: grid; gap: 6px; align-content: start; }
+.num b { font-family: var(--cond); font-weight: 500; font-size: clamp(32px, 9.4vw, 44px); line-height: 1; color: var(--blue); font-variant-numeric: tabular-nums; }
+.num span { font-size: 14px; line-height: 1.4; }
+.num small { font-family: var(--cond); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); margin-top: 2px; }
+.num.fill { background: var(--blue); border-color: var(--blue); color: #fff; }
+.num.fill b { color: #fff; }
+.num.fill small { color: rgba(255,255,255,.72); }
+
+/* ---------- плашки ---------- */
+.example { background: var(--sky); padding: 18px 18px 20px; display: grid; gap: 10px; }
+.example .label { color: var(--blue); }
+.example blockquote { margin: 0; font-family: var(--serif); font-style: italic; font-size: clamp(21px, 5.8vw, 26px); line-height: 1.25; color: var(--blue); }
+.hint { background: var(--navy); color: var(--on-dark); padding: 18px 18px 20px; display: grid; gap: 10px; }
+.hint .label { color: var(--on-dark-2); }
+.hint p { font-size: 15.5px; }
+
+/* ---------- распаковки ---------- */
+.rail {
+  display: flex; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+  padding-block: 2px 6px; padding-left: var(--gut-l); padding-right: var(--gut-r); scroll-padding-left: var(--gut-l);
+  margin-left: calc(-1 * var(--gut-l)); margin-right: calc(-1 * var(--gut-r)); scrollbar-width: none;
+}
+.rail::-webkit-scrollbar { display: none; }
+.story { flex: 0 0 min(58vw, 228px); scroll-snap-align: start; margin: 0; display: grid; gap: 7px; align-content: start; }
+.frame { position: relative; aspect-ratio: 9 / 16; width: 100%; max-width: 100%; overflow: hidden; background: var(--navy); border: 0; padding: 0; cursor: pointer; display: block; }
+.frame video, .frame img { width: 100%; height: 100%; object-fit: cover; }
+.frame:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.play { position: absolute; right: 8px; top: 8px; width: 26px; height: 26px; border-radius: 50%; background: rgba(27,35,64,.6); display: grid; place-items: center; pointer-events: none; }
+.play svg { width: 11px; height: 11px; fill: #fff; }
+.paused .play .i-pause, :not(.paused) > .play .i-play { display: none; }
+.story figcaption { font-size: 12.5px; line-height: 1.4; color: var(--ink-2); }
+.story figcaption b { font-family: var(--cond); font-weight: 500; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); display: block; }
+.swipe { display: flex; justify-content: space-between; gap: 10px; }
+
+.shot { margin: 0; display: grid; gap: 8px; }
+.shot .pic { border: 1px solid var(--line); background: #fff; overflow: hidden; }
+.shot .pic img { width: 100%; height: auto; }
+
+.chat { background: var(--paper-2); border: 1px solid var(--line); padding: 16px; display: grid; gap: 8px; }
+.chat .label { color: var(--ink-2); }
+.bubble { font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; font-size: 16px; line-height: 1.3; padding: 9px 14px; border-radius: 19px; max-width: 82%; }
+.bubble.in-msg { background: #e9e9eb; color: #111; justify-self: start; }
+.bubble.me { background: #0a84ff; color: #fff; justify-self: end; }
+
+.box-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.box-grid figure { margin: 0; display: grid; gap: 6px; }
+.box-grid .ph { aspect-ratio: 4 / 5; max-width: 100%; overflow: hidden; background: var(--navy); }
+.box-grid .ph img { width: 100%; height: 100%; object-fit: cover; }
+.box-grid figcaption, .vis figcaption b { font-family: var(--cond); font-weight: 500; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+.tags { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.tags li { border: 1px solid var(--ink); padding: 5px 11px; font-size: 13.5px; border-radius: 99px; }
+
+/* ---------- формула ---------- */
+.equation { background: var(--navy); color: var(--on-dark); padding: 22px 18px 24px; display: grid; gap: 14px; }
+.equation .label { color: var(--on-dark-2); }
+.equation p { font-family: var(--serif); font-size: clamp(25px, 7vw, 33px); line-height: 1.22; }
+.equation .plus { color: #8f9bff; font-style: normal; padding-inline: 2px; }
+.equation em { font-style: italic; color: #fff; background: var(--blue); padding: 0 8px; }
+
+.steps { margin: 0; padding: 0; list-style: none; display: grid; }
+.step { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 4px 10px; padding-block: 22px; border-top: 1px solid var(--ink); }
+.step .no { font-family: var(--cond); font-weight: 500; font-size: 44px; line-height: .85; color: var(--blue); }
+.step .body { display: grid; gap: 12px; }
+.step h3 { font-size: 25px; }
+.step .rh { font-size: 15.5px; }
+.step .rh b, .step .me b { font-family: var(--cond); font-weight: 500; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; display: block; margin-bottom: 3px; }
+.step .rh b { color: var(--ink-2); }
+.step .me { background: var(--sky); padding: 12px 14px 13px; font-size: 15.5px; }
+.step .me b { color: var(--blue); }
+
+.vis { margin: 0; display: grid; gap: 7px; }
+.vis .frame { aspect-ratio: 4 / 5; }
+.vis figcaption { font-size: 13px; line-height: 1.4; color: var(--ink-2); }
+.vis figcaption b { display: block; color: var(--blue); }
+.vis.phone .pic { width: min(100%, 250px); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: #fff; }
+.vis.phone .pic img { width: 100%; height: auto; }
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.trio .frame { aspect-ratio: 9 / 16; }
+.date { background: var(--navy); color: var(--on-dark); padding: 20px 18px; display: grid; gap: 6px; }
+.date .label { color: var(--on-dark-2); }
+.date b { font-family: var(--cond); font-weight: 500; font-size: clamp(26px, 7.4vw, 42px); line-height: 1.05; letter-spacing: .01em; }
+.date span { font-size: 14px; color: var(--on-dark-2); }
+
+/* ---------- план ---------- */
+.switch { display: inline-flex; border: 1px solid var(--ink); justify-self: start; max-width: 100%; }
+.switch button { font-family: var(--cond); font-weight: 500; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; border: 0; padding: 11px 16px; cursor: pointer; background: transparent; color: var(--ink); }
+.switch button + button { border-left: 1px solid var(--ink); }
+.switch button[aria-pressed="true"] { background: var(--blue); color: #fff; }
+.switch button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.plan { margin: 0; padding: 0; list-style: none; display: grid; }
+.plan li { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 6px 12px; padding-block: 16px; border-top: 1px solid var(--line); }
+.plan li:first-child { border-top: 1px solid var(--ink); }
+.plan .d { font-family: var(--cond); font-weight: 500; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); line-height: 1.2; padding-top: 4px; }
+.plan .b { display: grid; gap: 6px; }
+.plan h3 { font-size: 21px; }
+.plan .ex { font-size: 14.5px; color: var(--ink-2); }
+.plan .ex b { font-family: var(--cond); font-weight: 500; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); margin-right: 4px; }
+.end { font-family: var(--cond); font-weight: 500; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); display: flex; justify-content: space-between; gap: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
+
+@media (min-width: 720px) {
+  .page { padding-block: 32px 56px; }
+  .in { gap: 24px; }
+}
+</style>
+
+</head>
+<body>
+<!-- обложка -->
+<section class="page" aria-label="обложка">
+  <div class="in">
+    <div class="top"><span>Разбор · Rhode</span><span>@morgundze</span></div>
+    <h1>Формула запуска <em>Rhode</em></h1>
+    <div class="collage">
+      <div class="tall"><img src="media/hailey-cover.jpg" alt="Хейли Бибер в тёмно-синей ветровке из коллекции Rhode ко дню рождения" width="900" height="1600"></div>
+      <div class="sq sticker">wait, everyone has it?</div>
+      <div class="sq"><img src="media/openbox.jpg" alt="открытая коробка Rhode: фотокарточка Хейли и cake pops в серебряной посыпке" width="700" height="1244"></div>
+    </div>
+    <p class="lead">Как Хейли Бибер делает sold out за неделю. И как украсть эту стратегию себе: в бизнес и в личный бренд.</p>
+    <div class="sign"><i>Надежда Моргун</i><span class="label">@morgundze</span></div>
+  </div>
+</section>
+
+<!-- 01 цифры -->
+<section class="page" aria-label="Rhode в цифрах">
+  <div class="in">
+    <div class="top"><span>Разбор · Rhode</span><span>@morgundze</span></div>
+    <div class="head"><span class="no">01</span><span class="label">Цифры</span>
+      <h2>Rhode <em>в цифрах</em></h2></div>
+    <div class="nums">
+      <div class="num fill"><b>$500 млн</b><span>продажи Rhode за год, с апреля 2025 по март 2026</span><small>отчёт e.l.f., 05.2026</small></div>
+      <div class="num"><b>$27 млн</b><span>за один день летнего запуска, 9 июня 2026. И 90 000 новых покупателей</span><small>Glossy, 08.2026</small></div>
+      <div class="num"><b>11 дней</b><span>столько за первые полгода товар был в наличии. Остальное время — sold out</span><small>Fortune, 10.2026</small></div>
+      <div class="num"><b>№1</b><span>бренд в Sephora в США и Великобритании</span><small>Fortune, 10.2026</small></div>
+      <div class="num"><b>$1 млрд</b><span>за столько Хейли продала Rhode компании e.l.f. в 2025 году</span><small>e.l.f., 05.2025</small></div>
+      <div class="num fill"><b>5-й год</b><span>подряд Rhode выпускает коллекцию ко дню рождения Хейли</span><small>Cosmetics Business, 11.2026</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 распаковки -->
+<section class="page" aria-label="распаковки">
+  <div class="in">
+    <div class="top"><span>Разбор · Rhode</span><span>@morgundze</span></div>
+    <div class="head"><span class="no">02</span><span class="label">Всё одновременно</span>
+      <h2>Весь Instagram <em>в распаковках</em></h2></div>
+    <p class="lead">Пока все ждут старта продаж, весь Instagram уже в обзорах новой коллекции: тысяча и одна сторис и рилсы от блогерш, которым Rhode заранее разослал PR-боксы. Всё для того, чтобы у человека создалось ощущение: уже все пользуются этой косметикой. Все, кроме меня.</p>
+    <div class="swipe"><span class="label muted">Ролики блогерш, ноябрь 2026</span><span class="label" style="color:var(--blue)">листай →</span></div>
+    <div class="rail">
+      <figure class="story"><button class="frame paused" type="button" aria-label="ролик 1"><video muted loop playsinline preload="none" poster="media/clip1.jpg" data-src="media/clip1.mp4"></video><span class="play"><svg class="i-pause" viewBox="0 0 12 12"><rect x="2" y="1" width="3" height="10"/><rect x="7" y="1" width="3" height="10"/></svg><svg class="i-play" viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></span></button><figcaption><b>сразу в деле</b>патчи, румяна, блеск — макияж из бокса</figcaption></figure>
+      <figure class="story"><button class="frame paused" type="button" aria-label="ролик 2"><video muted loop playsinline preload="none" poster="media/clip2.jpg" data-src="media/clip2.mp4"></video><span class="play"><svg class="i-pause" viewBox="0 0 12 12"><rect x="2" y="1" width="3" height="10"/><rect x="7" y="1" width="3" height="10"/></svg><svg class="i-play" viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></span></button><figcaption><b>открытка с Хейли</b>румяна, блеск и cake pop из коробки</figcaption></figure>
+      <figure class="story"><button class="frame paused" type="button" aria-label="ролик 3"><video muted loop playsinline preload="none" poster="media/clip3.jpg" data-src="media/clip3.mp4"></video><span class="play"><svg class="i-pause" viewBox="0 0 12 12"><rect x="2" y="1" width="3" height="10"/><rect x="7" y="1" width="3" height="10"/></svg><svg class="i-play" viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></span></button><figcaption><b>the rhode navy capsule</b>лента, коробка, cake pops</figcaption></figure>
+      <figure class="story"><button class="frame paused" type="button" aria-label="ролик 4"><video muted loop playsinline preload="none" poster="media/clip4.jpg" data-src="media/clip4.mp4"></video><span class="play"><svg class="i-pause" viewBox="0 0 12 12"><rect x="2" y="1" width="3" height="10"/><rect x="7" y="1" width="3" height="10"/></svg><svg class="i-play" viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></span></button><figcaption><b>first impressions</b>Rhode Hailey Bieber birthday launch, прямо в машине</figcaption></figure>
+      <figure class="story"><button class="frame paused" type="button" aria-label="ролик 5"><video muted loop playsinline preload="none" poster="media/clip5.jpg" data-src="media/clip5.mp4"></video><span class="play"><svg class="i-pause" viewBox="0 0 12 12"><rect x="2" y="1" width="3" height="10"/><rect x="7" y="1" width="3" height="10"/></svg><svg class="i-play" viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></span></button><figcaption><b>best blush so far</b>«кажется, лучший оттенок румян у Rhode»</figcaption></figure>
+      <figure class="story"><button class="frame paused" type="button" aria-label="ролик 6"><video muted loop playsinline preload="none" poster="media/clip6.jpg" data-src="media/clip6.mp4"></video><span class="play"><svg class="i-pause" viewBox="0 0 12 12"><rect x="2" y="1" width="3" height="10"/><rect x="7" y="1" width="3" height="10"/></svg><svg class="i-play" viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></span></button><figcaption><b>trying the new collection</b>румяна и блеск</figcaption></figure>
+      <figure class="story"><button class="frame paused" type="button" aria-label="ролик 7"><video muted loop playsinline preload="none" poster="media/clip7.jpg" data-src="media/clip7.mp4"></video><span class="play"><svg class="i-pause" viewBox="0 0 12 12"><rect x="2" y="1" width="3" height="10"/><rect x="7" y="1" width="3" height="10"/></svg><svg class="i-play" viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></span></button><figcaption><b>birthday edit</b>ladies n' gents</figcaption></figure>
+    </div>
+
+    <div class="chat" aria-label="что думает человек, когда листает ленту">
+      <span class="label">В голове у того, кто листает ленту</span>
+      <span class="bubble in-msg">этим уже все пользуются</span>
+      <span class="bubble me">когда они успели??</span>
+    </div>
+
+    <figure class="shot">
+      <div class="pic"><img src="media/rhode-insta.jpg" alt="аккаунт Rhode в Instagram: вся лента — новая тёмно-синяя коллекция" width="800" height="905" loading="lazy"></div>
+      <figcaption class="cap">А в аккаунте бренда посты новой коллекции выходят пачкой. Вся лента — в одном тёмно-синем.</figcaption>
+    </figure>
+
+    <h3>Что лежит в <em>PR-боксе</em></h3>
+    <div class="box-grid">
+      <figure><div class="ph"><img src="media/card.jpg" alt="фотокарточка с Хейли Бибер из бокса" width="700" height="1244" loading="lazy"></div><figcaption>карточка с Хейли</figcaption></figure>
+      <figure><div class="ph"><img src="media/patches.jpg" alt="патчи под глаза в тёмно-синей упаковке" width="700" height="1244" loading="lazy"></div><figcaption>патчи в синем</figcaption></figure>
+      <figure><div class="ph"><img src="media/case.jpg" alt="тёмно-синяя косметичка из бокса" width="700" height="1244" loading="lazy"></div><figcaption>косметичка</figcaption></figure>
+      <figure><div class="ph"><img src="media/hero-box.jpg" alt="тёмно-синяя коробка с белой надписью rhode и серебристой лентой" width="900" height="1600" loading="lazy"></div><figcaption>коробка и лента</figcaption></figure>
+    </div>
+    <ul class="tags">
+      <li>тёмно-синяя коробка</li><li>атласная лента</li><li>косметичка</li><li>патчи</li><li>румяна-стик</li><li>блеск</li><li>cake pops</li><li>фотокарточка Хейли</li>
+    </ul>
+    <div class="hint">
+      <span class="label">Подсказка · посмотри на детали</span>
+      <p>Каждая вещь в боксе — в одном цвете. Коробку узнаёшь в ленте с первой секунды, ещё до того, как увидишь логотип.</p>
+      <p>И посмотри на самих блогерш: гладкие волосы, сияющая кожа, свитера в синем и молочном. Они выглядят как Хейли и как та, кто покупает Rhode. Это инфлюенсеры, которые являются полным отражением бренда.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 FOMO -->
+<section class="page" aria-label="стратегия FOMO">
+  <div class="in">
+    <div class="top"><span>Разбор · Rhode</span><span>@morgundze</span></div>
+    <div class="head"><span class="no">03</span><span class="label">На чём это держится</span>
+      <h2>Стратегия <em>FOMO</em></h2></div>
+    <p class="lead">FOMO — это страх упущенных возможностей. Вместо того чтобы месяцами прогревать к своему продукту, Rhode играет на ажиотаже и страхе не успеть. Это эффект закрытых продаж, и сейчас это главный тренд в маркетинге: и для брендов, и для личных брендов.</p>
+    <div class="example">
+      <span class="label">Как это работает</span>
+      <blockquote>Продажи только открылись, а этим продуктом уже кто-то пользуется. Он уже у всех. А я что, всё пропустила? Нужно срочно бежать покупать</blockquote>
+    </div>
+    <p>В этот момент ты не пойдёшь изучать свойства продукта. Ты просто, как и все, пойдёшь и встанешь в эту очередь.</p>
+    <p>Поэтому вместо того чтобы в очередной раз выжигать аудиторию контентом, можно внедрить эту стратегию себе: чтобы в момент открытия продаж твой клиент уже почувствовал упущенную возможность.</p>
+  </div>
+</section>
+
+<!-- 04 формула -->
+<section class="page" aria-label="формула запуска">
+  <div class="in">
+    <div class="top"><span>Разбор · Rhode</span><span>@morgundze</span></div>
+    <div class="head"><span class="no">04</span><span class="label">Формула</span>
+      <h2>Формула запуска Rhode, которую можно <em>украсть</em> себе</h2></div>
+    <div class="equation">
+      <span class="label">Вся формула в одну строку</span>
+      <p>Повод <i class="plus">+</i> одна сторис <i class="plus">+</i> лист ожидания <i class="plus">+</i> друзья бренда <i class="plus">+</i> лицо <i class="plus">+</i> код <i class="plus">+</i> лимит = <em>sold out</em></p>
+    </div>
+    <ol class="steps">
+      <li class="step"><span class="no">1</span><div class="body"><h3>Повод</h3>
+        <figure class="vis"><button class="frame paused" type="button" aria-label="ролик Rhode: Хейли в праздничном колпаке"><video muted loop playsinline preload="none" poster="media/step-hat.jpg" data-src="media/step-hat.mp4" style="object-position:50% 0%"></video><span class="play"><svg class="i-pause" viewBox="0 0 12 12"><rect x="2" y="1" width="3" height="10"/><rect x="7" y="1" width="3" height="10"/></svg><svg class="i-play" viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></span></button><figcaption><b>Instagram Rhode</b>Хейли в праздничном колпаке — коллекция к её 30-летию</figcaption></figure>
+        <p class="rh"><b>У Rhode</b>Запуск привязан к событию: день рождения Хейли, лето, выход в новую страну. У неё день рождения — она сделала дроп. Birthday drop.</p>
+        <p class="me"><b>Себе</b>День рождения, годовщина бизнеса или блога, сезон, переезд. Повод — это причина говорить о продукте именно сейчас.</p></div></li>
+      <li class="step"><span class="no">2</span><div class="body"><h3>Одна сторис</h3>
+        <figure class="vis"><button class="frame paused" type="button" aria-label="ролик Rhode: бирка с логотипом"><video muted loop playsinline preload="none" poster="media/step-tag.jpg" data-src="media/step-tag.mp4"></video><span class="play"><svg class="i-pause" viewBox="0 0 12 12"><rect x="2" y="1" width="3" height="10"/><rect x="7" y="1" width="3" height="10"/></svg><svg class="i-play" viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></span></button><figcaption><b>Instagram Rhode</b>только бирка: кусочек логотипа и цвета</figcaption></figure>
+        <p class="rh"><b>У Rhode</b>Когда происходит дроп, мы видим просто одну сторис: «скоро». Фото с фотосессии, где видно кусочек Хейли, кусочек логотипа, кусочек цветовой гаммы. Можно дорисовать воображением, что это будет, но до конца никто не понимает. И никаких бесконечных сторителлингов о том, как выводили идеальную формулу блеска.</p>
+        <p class="me"><b>Себе</b>Покажи кусочек: цвет, деталь, себя. Без объяснений. Личному бренду достаточно выйти и сказать: «ребят, у меня прошло два интенсива, вы всё пропустили. через две недели будет новый, регистрируйтесь».</p></div></li>
+      <li class="step"><span class="no">3</span><div class="body"><h3>Лист ожидания</h3>
+        <figure class="vis phone"><div class="pic"><img src="media/site-countdown.jpg" alt="сайт Rhode с телефона: Birthday countdown — An exclusive navy capsule to celebrate Hailey's 30th" width="780" height="1688" loading="lazy"></div><figcaption><b>сайт Rhode, 19 ноября</b>обратный отсчёт до дропа, а вход на сайт обещает early access: «shop the full collection before everyone else»</figcaption></figure>
+        <p class="rh"><b>У Rhode</b>Следующая сторис: можно оставить почту, зарегистрироваться первыми и получить уведомление, что продажи открыты. Ты стоишь в листе ожидания и уже собираешь свою корзину.</p>
+        <p class="me"><b>Себе</b>Бот в Telegram или форма, куда можно встать за 10 секунд. Встал в лист — уже пообещал себе купить.</p></div></li>
+      <li class="step"><span class="no">4</span><div class="body"><h3>Друзья бренда</h3>
+        <figure class="vis"><div class="trio">
+          <button class="frame paused" type="button" aria-label="распаковка 1"><video muted loop playsinline preload="none" poster="media/clip2.jpg" data-src="media/clip2.mp4"></video><span class="play"><svg class="i-pause" viewBox="0 0 12 12"><rect x="2" y="1" width="3" height="10"/><rect x="7" y="1" width="3" height="10"/></svg><svg class="i-play" viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></span></button>
+          <button class="frame paused" type="button" aria-label="распаковка 2"><video muted loop playsinline preload="none" poster="media/clip5.jpg" data-src="media/clip5.mp4"></video><span class="play"><svg class="i-pause" viewBox="0 0 12 12"><rect x="2" y="1" width="3" height="10"/><rect x="7" y="1" width="3" height="10"/></svg><svg class="i-play" viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></span></button>
+          <button class="frame paused" type="button" aria-label="распаковка 3"><video muted loop playsinline preload="none" poster="media/clip7.jpg" data-src="media/clip7.mp4"></video><span class="play"><svg class="i-pause" viewBox="0 0 12 12"><rect x="2" y="1" width="3" height="10"/><rect x="7" y="1" width="3" height="10"/></svg><svg class="i-play" viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></span></button>
+        </div><figcaption><b>Instagram, ноябрь 2026</b>три распаковки из тысячи — в один день</figcaption></figure>
+        <p class="rh"><b>У Rhode</b>Rhode заранее отправляет продукты людям, они тестируют и снимают контент. Как только открываются продажи, уже выгружено огромное количество сторис. Это амбассадоры, а не разовая рекламная интеграция: с ними партнёрство и доверие. И это не только известные личности, но и обычные блогеры, которые круто снимают.</p>
+        <p class="me"><b>Себе</b>У наших брендов нет друзей бренда, есть только разовая реклама, и продукт отправляют, когда он уже вышел. А очень зря. Собери 10–30 человек, которые выглядят как твой клиент, и отправь им продукт первыми. Бизнесу — постоянные гости и блогеры твоего города. Личному бренду — ученицы и клиентки.</p></div></li>
+      <li class="step"><span class="no">5</span><div class="body"><h3>Лицо</h3>
+        <figure class="vis"><button class="frame paused" type="button" aria-label="ролик Rhode: Хейли в ветровке"><video muted loop playsinline preload="none" poster="media/step-jacket.jpg" data-src="media/step-jacket.mp4"></video><span class="play"><svg class="i-pause" viewBox="0 0 12 12"><rect x="2" y="1" width="3" height="10"/><rect x="7" y="1" width="3" height="10"/></svg><svg class="i-play" viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></span></button><figcaption><b>Instagram Rhode</b>Хейли в ветровке из новой коллекции</figcaption></figure>
+        <p class="rh"><b>У Rhode</b>Нам продают не продукт и не его свойства, а лайфстайл и образ Хейли Бибер, к которому хочется быть причастными. Ты даже не задумываешься, что в баночке. Ты просто хочешь быть такой же.</p>
+        <p class="me"><b>Себе</b>Строй всё вокруг своей личности. Если твой личный бренд сильнее, чем у кого-то другого, ты уже выигрываешь конкурентную борьбу.</p></div></li>
+      <li class="step"><span class="no">6</span><div class="body"><h3>Код</h3>
+        <figure class="vis"><button class="frame paused" type="button" aria-label="ролик Rhode: румяна в тёмно-синем"><video muted loop playsinline preload="none" poster="media/step-blush.jpg" data-src="media/step-blush.mp4"></video><span class="play"><svg class="i-pause" viewBox="0 0 12 12"><rect x="2" y="1" width="3" height="10"/><rect x="7" y="1" width="3" height="10"/></svg><svg class="i-play" viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z"/></svg></span></button><figcaption><b>Instagram Rhode</b>румяна Pocket Plush — тоже в тёмно-синем</figcaption></figure>
+        <p class="rh"><b>У Rhode</b>Тёмно-синий, коробка, лента. Бренд узнают раньше, чем видят логотип. И в линейке только самое нужное.</p>
+        <p class="me"><b>Себе</b>Цвет, упаковка, одна деталь, которую ты повторяешь везде. И не тысяча и один продукт сразу — это ублажает эго создателя, а люди не успевают проникнуться.</p></div></li>
+      <li class="step"><span class="no">7</span><div class="body"><h3>Лимит и дата</h3>
+        <div class="date"><span class="label">Так дата стоит на сайте Rhode</span><b>Nov 20th at 9am PT</b><span>только на своём сайте. В Москве — 20 ноября, 20:00</span></div>
+        <p class="rh"><b>У Rhode</b>Продажи открываются в один день и только на своём сайте. Кто не зарегистрировался — заходит, а там sold out.</p>
+        <p class="me"><b>Себе</b>Дата старта и ограничение: штук, мест или часов. Сначала — тем, кто в листе.</p></div></li>
+    </ol>
+    <div class="hint">
+      <span class="label">Подсказка</span>
+      <p>В летнем запуске больше 70% продаж сделали те, кто уже покупал Rhode. Лист ожидания и «свои» — главный актив бренда, а не реклама.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 план -->
+<section class="page" aria-label="твой запуск за 7 дней">
+  <div class="in">
+    <div class="top"><span>Разбор · Rhode</span><span>@morgundze</span></div>
+    <div class="head"><span class="no">05</span><span class="label">На себя</span>
+      <h2>Твой запуск <em>за 7 дней</em></h2></div>
+    <p class="lead">Выбери, что запускаешь:</p>
+    <div class="switch" role="group" aria-label="для кого план">
+      <button type="button" id="modeBiz" aria-pressed="true" data-mode="biz">Бизнес</button>
+      <button type="button" id="modeMe" aria-pressed="false" data-mode="me">Личный бренд</button>
+    </div>
+    <ol class="plan">
+      <li><span class="d">День 1</span><div class="b"><h3>Одна сторис</h3>
+        <p>«Скоро» и ссылка в лист ожидания. Без рассказа о том, как ты всё это готовила.</p>
+        <p class="ex" data-mode="biz"><b>Пример</b>фото новой кружки в бумаге и «20 ноября. запишись, чтобы забрать первой». Ссылка — на бот или форму.</p>
+        <p class="ex" data-mode="me" hidden><b>Пример</b>«открываю практикум. 50 мест. лист ожидания — по ссылке». Ссылка на бот в Telegram — прямо в тексте.</p></div></li>
+      <li><span class="d">День 2</span><div class="b"><h3>«Лист открыт» и волна</h3>
+        <p>Показываешь, что внутри. В этот же день «свои» выкладывают распаковки, а ты репостишь всё.</p>
+        <p class="ex" data-mode="biz"><b>Пример</b>20 сторис гостей с кружкой за один день — в твоих репостах.</p>
+        <p class="ex" data-mode="me" hidden><b>Пример</b>ученицы рассказывают, что поменялось после первого урока. Скрины их сообщений — в сторис.</p></div></li>
+      <li><span class="d">Дни 3–6</span><div class="b"><h3>Чужой контент и ты</h3>
+        <p>Отзывы, распаковки, ты сама с продуктом. Говори цифрами: сколько человек уже в листе.</p>
+        <p class="ex" data-mode="biz"><b>Пример</b>«в листе ожидания 300 человек, кружек — 200».</p>
+        <p class="ex" data-mode="me" hidden><b>Пример</b>«в листе 120 человек, мест 50. первыми пишу тем, кто в листе».</p></div></li>
+      <li><span class="d">День 7</span><div class="b"><h3>Продажи</h3>
+        <p>Сначала — листу ожидания. Лимит штук, мест или часов. Купить, если успеешь.</p>
+        <p class="ex" data-mode="biz"><b>Пример</b>продажи в 12:00, в 11:00 — ссылка листу ожидания.</p>
+        <p class="ex" data-mode="me" hidden><b>Пример</b>за час до общего старта — ссылка на оплату тем, кто в листе.</p></div></li>
+      <li><span class="d">После</span><div class="b"><h3>Sold out и новый лист</h3>
+        <p>Честно говоришь, как быстро разобрали, и сразу открываешь лист ожидания на следующий дроп.</p></div></li>
+    </ol>
+    <div class="hint">
+      <span class="label">Подсказка</span>
+      <p>Самый круто работающий контент — тот, который является трейлером твоего продукта. Когда контент, прогрев и сам продукт совпадают, у человека щёлкает, и он понимает, что хочет прийти к тебе.</p>
+    </div>
+    <div class="end"><span>Надежда Моргун</span><span>@morgundze</span></div>
+  </div>
+</section>
+
+<script>
+(function () {
+  /* ролики: играют, когда видны; нажатие — пауза */
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var frames = document.querySelectorAll('.frame');
+  function load(v) { if (!v.src && v.dataset.src) v.src = v.dataset.src; }
+  function play(v) { load(v); var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+  frames.forEach(function (fr) {
+    var v = fr.querySelector('video'); if (!v) return;
+    fr.addEventListener('click', function () {
+      if (v.paused) { fr.dataset.user = 'play'; play(v); } else { fr.dataset.user = 'pause'; v.pause(); }
+    });
+    v.addEventListener('play', function () { fr.classList.remove('paused'); });
+    v.addEventListener('pause', function () { fr.classList.add('paused'); });
+  });
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var fr = e.target, v = fr.querySelector('video'); if (!v) return;
+        if (e.isIntersecting && e.intersectionRatio > 0.6) { if (fr.dataset.user !== 'pause') play(v); }
+        else if (!v.paused) v.pause();
+      });
+    }, { threshold: [0, 0.6, 1] });
+    frames.forEach(function (fr) { if (fr.querySelector('video')) io.observe(fr); });
+  }
+
+  /* бизнес / личный бренд */
+  var btns = document.querySelectorAll('.switch button');
+  function setMode(m) {
+    btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.mode === m)); });
+    document.querySelectorAll('.plan .ex').forEach(function (p) { p.hidden = p.dataset.mode !== m; });
+    try { localStorage.setItem('rhode-mode', m); } catch (e) {}
+  }
+  btns.forEach(function (b) { b.addEventListener('click', function () { setMode(b.dataset.mode); }); });
+  try { var sm = localStorage.getItem('rhode-mode'); if (sm === 'me' || sm === 'biz') setMode(sm); } catch (e) {}
+})();
+</script>
+
+</body>
+</html>
