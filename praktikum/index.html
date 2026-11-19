@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Блог и личный бренд — практикум Надежды Моргун</title>
+<meta name="description" content="Практикум 25–26 декабря, онлайн. Два дня, чтобы найти свои смыслы и собрать рилсы на 2027 год. 1 000 ₽.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Блог и личный бренд — практикум 25–26 декабря">
+<meta property="og:description" content="Два дня, чтобы найти свои смыслы и собрать рилсы на 2027 год. Онлайн, 1 000 ₽.">
+<meta property="og:url" content="https://morgundze.github.io/praktikum/">
+<meta property="og:image" content="https://morgundze.github.io/praktikum/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/icon.png">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+/* layout: журнал (круг 7, вариант A) — слоновая кость, крупные узкие буквы с засечками, её фото; акцент — синий как «make art» из блока распаковщика, чёрный под программу. Чистовик 19.11: без «было и стало» и разбора рилса, оплата через Telegram-бота, документы отдельными страницами */
+:root {
+  --ivory: #F3EEE7;
+  --paper: #FBF9F5;
+  --ink: #15120F;
+  --soft: #5E574F;
+  --line: rgba(21, 18, 15, 0.16);
+  --line-2: rgba(21, 18, 15, 0.34);
+  --acc: #2B14C8;
+  --dark: #14121B;
+  --band: #2B14C8;
+  --on-dark: #F6F3EE;
+  --on-dark-dim: rgba(246, 243, 238, 0.74);
+  --on-dark-line: rgba(246, 243, 238, 0.3);
+  --display: 'Oranienbaum', 'Didot', 'Bodoni 72', Georgia, serif;
+  --serif: 'PT Serif', Georgia, serif;
+  --ital: 'Playfair Display', Georgia, serif;
+  --mono: 'PT Mono', 'Courier New', monospace;
+  --hand: 'Caveat', 'Segoe Print', cursive;
+  --ui: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --gut: clamp(16px, 4.5vw, 64px);
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--ivory); color: var(--ink); font: 400 17px/1.6 var(--serif); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+h1, h2, h3 { text-wrap: balance; }
+.wrap { max-width: 1280px; margin-inline: auto; padding-left: max(var(--gut), env(safe-area-inset-left, 0px)); padding-right: max(var(--gut), env(safe-area-inset-right, 0px)); }
+.lbl { margin: 0 0 14px; font: 500 11px/1.4 var(--ui); letter-spacing: .22em; text-transform: uppercase; color: var(--soft); }
+.pill { display: inline-flex; align-items: center; gap: 10px; background: var(--acc); color: var(--on-dark); text-decoration: none; padding: 14px 24px; border-radius: 99px; font: 600 11px/1 var(--ui); letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; border: 0; cursor: pointer; }
+.pill.ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+.pill:focus-visible, .reel:focus-visible, footer a:focus-visible, .legal a:focus-visible { outline: 2px solid var(--acc); outline-offset: 3px; }
+.hand { font: 700 34px/1 var(--hand); color: var(--acc); }
+.h2 { margin: 0; font: 400 clamp(40px, 5.4vw, 76px)/.9 var(--display); text-transform: uppercase; }
+.h2 em, .big em { font: italic 400 .62em/1 var(--ital); text-transform: none; color: var(--acc); letter-spacing: -.02em; }
+.sec { padding-block: clamp(56px, 8vw, 110px); }
+.sec-hd { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 18px; margin-bottom: clamp(28px, 4vw, 48px); }
+.sec-hd p { margin: 0; max-width: 46ch; font: 400 14px/1.6 var(--mono); color: var(--soft); }
+
+
+/* nav */
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 22px; border-bottom: 1px solid var(--line); }
+.nav .name { font: 400 22px/1 var(--display); letter-spacing: .02em; text-transform: uppercase; }
+.nav ul { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; font: 500 11px/1 var(--ui); letter-spacing: .16em; text-transform: uppercase; }
+.nav ul a { text-decoration: none; }
+.nav ul a:hover { color: var(--acc); }
+
+/* hero */
+.hero .wrap { padding-block: clamp(28px, 5vw, 56px) clamp(48px, 7vw, 96px); display: grid; justify-items: center; }
+.kicker { margin: 0 0 14px; font: 500 11px/1.4 var(--ui); letter-spacing: .22em; text-transform: uppercase; color: var(--soft); text-align: center; }
+.big { margin: 0; font: 400 clamp(54px, 11.5vw, 176px)/.84 var(--display); text-transform: uppercase; text-align: center; letter-spacing: -.01em; }
+.spread { position: relative; width: min(1040px, 100%); margin-top: clamp(-34px, -2.6vw, -12px); display: grid; grid-template-columns: 1fr minmax(0, 420px) 1fr; align-items: start; }
+.spread .main { grid-column: 2; grid-row: 1; position: relative; z-index: 2; margin: 0; }
+.spread .main img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; filter: grayscale(1) contrast(1.05); }
+.spread .side { grid-column: 1; grid-row: 1; justify-self: end; margin: 110px -46px 0 0; width: min(220px, 100%); z-index: 3; position: relative; }
+.spread .side img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.spread .card { grid-column: 3; grid-row: 1; align-self: start; margin: 90px 0 0 -60px; z-index: 3; background: var(--paper); padding: 26px 26px 24px; box-shadow: 0 18px 50px -24px rgba(0,0,0,.35); max-width: 340px; position: relative; }
+.spread .card p { margin: 0 0 18px; font: 400 21px/1.3 var(--serif); }
+.spread .card small { display: block; margin: -6px 0 18px; font: 400 13px/1.55 var(--mono); color: var(--soft); }
+.spread .card .row { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* hey */
+.hey { background: var(--paper); }
+.hey .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(32px, 6vw, 90px); align-items: center; }
+.hey .hand { display: block; margin-bottom: 10px; transform: rotate(-3deg); transform-origin: left; }
+.hey h2 { margin: 0 0 26px; font: 400 clamp(34px, 4.6vw, 64px)/.95 var(--display); text-transform: uppercase; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; font: 400 14px/1.65 var(--mono); color: #2E2924; }
+.cols p { margin: 0; }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin: 34px 0 30px; border-top: 1px solid var(--line); padding-top: 22px; }
+.facts b { display: block; white-space: nowrap; font: 400 clamp(24px, 2.4vw, 34px)/1 var(--display); color: var(--acc); font-variant-numeric: tabular-nums; }
+.facts span { display: block; margin-top: 8px; font: 400 12.5px/1.45 var(--mono); color: var(--soft); }
+.polas { position: relative; min-height: 470px; }
+.pola { position: absolute; background: #fff; padding: 12px; box-shadow: 0 16px 40px -20px rgba(0,0,0,.45); }
+.pola img { width: 100%; height: 100%; object-fit: cover; }
+.pola.a { left: 0; top: 0; width: 62%; height: 78%; transform: rotate(-3deg); }
+.pola.b { right: 0; bottom: 0; width: 52%; height: 52%; transform: rotate(4deg); }
+
+/* «это мой подход» — тем же печатным шрифтом, что «я помогаю увидеть…» */
+.say { margin: clamp(32px, 4vw, 52px) 0 0; padding-top: 26px; border-top: 1px solid var(--line); max-width: 760px; font: 400 clamp(16px, 1.5vw, 19px)/1.65 var(--mono); color: #2E2924; }
+.say em { font: italic 400 1.22em/1 var(--ital); color: var(--acc); letter-spacing: -.01em; }
+.fsub { margin: 16px 0 0; max-width: 52ch; font: 400 14px/1.6 var(--mono); color: var(--soft); }
+
+/* рилсы */
+.reels-sec { background: var(--paper); border-block: 1px solid var(--line); }
+.total { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; }
+.total b { font: 400 clamp(44px, 6vw, 88px)/.9 var(--display); color: var(--acc); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.total span { font: 400 14px/1.5 var(--mono); color: var(--soft); max-width: 30ch; }
+.grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; }
+.reel { position: relative; display: block; aspect-ratio: 9 / 16; overflow: hidden; background: var(--ivory); text-decoration: none; }
+.reel img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.reel:hover img { transform: scale(1.04); }
+.reel::after { content: ""; position: absolute; inset: 55% 0 0; background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0)); }
+.reel .v { position: absolute; left: 10px; bottom: 9px; z-index: 1; display: flex; align-items: center; gap: 6px; color: #fff; font: 600 13px/1 var(--ui); font-variant-numeric: tabular-nums; }
+.reel .v svg { width: 11px; height: 12px; fill: #fff; }
+.reels-note { margin: 18px 0 0; font: 400 12.5px/1.5 var(--mono); color: var(--soft); }
+
+/* формула */
+.formula .eq { list-style: none; margin: clamp(28px, 4vw, 48px) 0 0; padding: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 0; font: 400 clamp(30px, 4.6vw, 66px)/1.05 var(--display); text-transform: uppercase; }
+.formula .eq li + li::before { content: "+"; display: inline-block; margin: 0 .28em; font: italic 400 .62em/1 var(--ital); color: var(--acc); vertical-align: .12em; }
+.formula .fsub { margin-top: clamp(20px, 3vw, 32px); font-size: clamp(14px, 1.3vw, 16px); color: #2E2924; }
+
+/* words */
+.words { overflow: hidden; border-block: 1px solid var(--line); }
+.words p { margin: 0; padding: clamp(10px, 2vw, 22px) max(var(--gut), env(safe-area-inset-left, 0px)); white-space: nowrap; font: 400 min(8.4vw, 150px)/.95 var(--display); text-transform: uppercase; text-align: center; }
+.words p span { color: var(--acc); font: italic 400 .5em/1 var(--ital); text-transform: none; vertical-align: .35em; margin-inline: .2em; }
+
+/* golden week */
+.gold .top { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(28px, 5vw, 80px); align-items: end; margin-bottom: clamp(32px, 4vw, 52px); }
+.gold h2 { margin: 0; font: 400 clamp(38px, 5.4vw, 80px)/.92 var(--display); text-transform: uppercase; }
+.gold h2 em { font: italic 400 .62em/1 var(--ital); text-transform: none; color: var(--acc); }
+.gold .top p { margin: 0; font: 400 19px/1.45 var(--serif); }
+.cal-scroll { overflow-x: auto; padding-bottom: 8px; }
+.cal { min-width: 860px; display: grid; gap: 10px; }
+.cal .m, .cal .d, .cal .ph { display: grid; grid-template-columns: repeat(15, minmax(0, 1fr)); gap: 6px; }
+.cal .m span { font: 500 11px/1 var(--ui); letter-spacing: .2em; text-transform: uppercase; color: var(--soft); }
+.cal .m .dec { grid-column: span 7; } .cal .m .jan { grid-column: span 8; }
+.cal .d div { border: 1px solid var(--line); background: var(--paper); padding: 12px 4px 14px; text-align: center; display: grid; gap: 6px; }
+.cal .d small { font: 500 10px/1 var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--soft); }
+.cal .d b { font: 400 32px/1 var(--display); font-variant-numeric: tabular-nums; }
+.cal .d .p { background: var(--acc); border-color: var(--acc); color: var(--on-dark); }
+.cal .d .p small { color: var(--on-dark-dim); }
+.cal .d .s { background: transparent; border-style: dashed; }
+.cal .d .g b { color: var(--acc); }
+.cal .ph div { padding-top: 10px; border-top: 2px solid var(--ink); font: 400 13px/1.4 var(--mono); }
+.cal .ph div b { display: block; font: 500 11px/1.4 var(--ui); letter-spacing: .16em; text-transform: uppercase; }
+.cal .ph .a { grid-column: span 2; border-color: var(--acc); }
+.cal .ph .b { grid-column: span 5; border-top-style: dashed; border-color: var(--soft); }
+.cal .ph .c { grid-column: span 8; border-color: var(--acc); }
+.why { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 3vw, 40px); margin-top: clamp(36px, 5vw, 60px); border-top: 1px solid var(--line); padding-top: 26px; }
+.why h3 { margin: 0 0 8px; font: 400 26px/1 var(--display); text-transform: uppercase; }
+.why p { margin: 0; font: 400 14px/1.6 var(--mono); color: #2E2924; }
+
+/* program */
+.prog { background: var(--dark); color: var(--on-dark); }
+.prog .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, .8fr); gap: clamp(16px, 2.4vw, 28px); align-items: stretch; }
+.head { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.head span { font: 500 11px/1.4 var(--ui); letter-spacing: .2em; text-transform: uppercase; color: var(--on-dark-dim); }
+.day { border: 1px solid var(--on-dark-line); padding: 26px 24px 28px; display: grid; align-content: start; gap: 14px; min-width: 0; }
+.day .d { font: 500 11px/1 var(--ui); letter-spacing: .2em; text-transform: uppercase; color: var(--on-dark-dim); }
+.day h3 { margin: 0; font: 400 clamp(28px, 2.8vw, 38px)/1 var(--display); text-transform: uppercase; }
+.day ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; font: 400 14px/1.55 var(--mono); }
+.day li::before { content: "— "; color: var(--on-dark-dim); }
+.day li.key { color: var(--on-dark); }
+.day li.key b { font-weight: 400; background: var(--band); padding: 1px 6px; }
+.prog figure { margin: 0; min-height: 420px; position: relative; }
+.prog figure img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 84%; filter: grayscale(1) contrast(1.05); }
+.fmt { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 18px; border-top: 1px solid var(--on-dark-line); padding-top: 22px; }
+.fmt b { display: block; font: 400 28px/1 var(--display); text-transform: uppercase; }
+.fmt span { display: block; margin-top: 6px; font: 400 13px/1.5 var(--mono); color: var(--on-dark-dim); }
+
+/* распаковщик — синяя полоса-плакат, как в черновике 1 */
+.unpack { background: var(--band); color: var(--on-dark); }
+.unpack .wrap { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
+.unpack .lbl { color: var(--on-dark-dim); }
+.gift { display: inline-block; margin: 0 0 18px; padding: 8px 14px; border: 1px solid var(--on-dark-line); border-radius: 99px; font: 500 11px/1.2 var(--ui); letter-spacing: .14em; text-transform: uppercase; }
+.unpack .wrap > div { min-width: 0; }
+.unpack h2 { margin: 0 0 26px; font: 400 clamp(40px, 4.8vw, 72px)/.9 var(--display); text-transform: uppercase; }
+.unpack .lead { margin: 0 0 16px; max-width: 34ch; font: 400 clamp(20px, 2vw, 25px)/1.35 var(--serif); }
+.unpack .sub { margin: 0; max-width: 54ch; font: 400 14px/1.65 var(--mono); color: var(--on-dark-dim); }
+.outs { list-style: none; margin: 28px 0 30px; padding: 22px 0 0; display: grid; gap: 10px; border-top: 1px solid var(--on-dark-line); font: 400 14px/1.55 var(--mono); }
+.outs li::before { content: "— "; color: var(--on-dark-dim); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.chips li { padding: 8px 14px; border: 1px solid var(--on-dark-line); border-radius: 999px; font: 400 13px/1 var(--ui); }
+.poster { margin: 0; min-width: 0; }
+.poster img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; box-shadow: 0 0 0 1px var(--on-dark-line), 0 30px 60px -30px rgba(0,0,0,.5); transform: rotate(2deg); }
+
+/* ученицы */
+.students .wrap > .top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 80px); align-items: end; margin-bottom: clamp(32px, 4vw, 52px); }
+.students .huge { margin: 0; font: 400 clamp(72px, 13vw, 200px)/.82 var(--display); color: var(--acc); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.students .top p { margin: 0; font: 400 19px/1.45 var(--serif); }
+.cases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 30px); }
+.case { display: grid; gap: 14px; align-content: start; min-width: 0; border-top: 2px solid var(--ink); padding-top: 20px; }
+.case b { display: block; font: 400 clamp(34px, 3.6vw, 52px)/.95 var(--display); color: var(--acc); }
+.case span { font: 400 14px/1.55 var(--mono); }
+.case small { display: block; margin-top: 6px; font: 500 11px/1.4 var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--soft); }
+
+/* отзывы — стена скринов */
+.rev { background: var(--paper); border-top: 1px solid var(--line); }
+.wall { columns: 3 260px; column-gap: clamp(14px, 2vw, 24px); }
+.wall .q { break-inside: avoid; margin: 0 0 clamp(14px, 2vw, 24px); padding: 22px 22px 20px; display: grid; gap: 14px; background: var(--ivory); border: 1px solid var(--line); }
+.wall .q::before { content: "«"; font: italic 400 46px/.6 var(--ital); color: var(--acc); }
+.wall blockquote { margin: 0; font: 400 17px/1.5 var(--serif); }
+.wall .who { font: 500 11px/1.4 var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--soft); }
+
+/* cta */
+.cta .wrap { display: grid; justify-items: center; gap: 24px; text-align: center; }
+.cta h2 { margin: 0; font: 400 clamp(44px, 7vw, 104px)/.9 var(--display); text-transform: uppercase; }
+.cta h2 em { font: italic 400 .6em/1 var(--ital); text-transform: none; color: var(--acc); }
+.price { font: 400 clamp(56px, 8vw, 112px)/1 var(--display); color: var(--acc); }
+.incl { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.incl li { padding: 8px 14px; border: 1px solid var(--line-2); border-radius: 99px; font: 400 13px/1 var(--ui); }
+.incl li.k { background: var(--band); border-color: var(--band); color: var(--on-dark); }
+.timer { display: flex; gap: clamp(16px, 3vw, 34px); align-items: flex-start; }
+.timer div { display: grid; justify-items: center; gap: 6px; min-width: 56px; }
+.timer b { font: 400 clamp(34px, 4vw, 52px)/1 var(--display); font-variant-numeric: tabular-nums; }
+.timer span { font: 500 10px/1 var(--ui); letter-spacing: .18em; text-transform: uppercase; color: var(--soft); }
+.cta .meta { font: 400 14px/1.5 var(--mono); color: var(--soft); }
+
+footer { border-top: 1px solid var(--line); }
+footer .wrap { display: grid; gap: 14px; padding-block: 32px calc(40px + env(safe-area-inset-bottom, 0px)); font: 400 12px/1.6 var(--mono); color: var(--soft); }
+footer p { margin: 0; }
+footer a { text-decoration: none; }
+footer a:hover { color: var(--acc); }
+.f-me { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.f-me .n { font: 400 20px/1 var(--display); text-transform: uppercase; color: var(--ink); }
+.f-me .sep { color: var(--acc); font: 700 26px/0 var(--ui); position: relative; top: 2px; }
+.f-me a { font: 500 12px/1 var(--ui); letter-spacing: .14em; color: var(--ink); }
+.f-docs { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.f-docs a { text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
+.pay { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.legal { margin: 0; max-width: 60ch; font: 400 12.5px/1.6 var(--mono); color: var(--soft); }
+.legal a { color: var(--ink); text-underline-offset: 3px; }
+
+@media (max-width: 900px) {
+  .nav ul { display: none; }
+  .spread { grid-template-columns: 1fr; justify-items: center; }
+  .spread .main { grid-column: 1; grid-row: 1; width: min(420px, 100%); }
+  .spread .side { grid-column: 1; grid-row: 2; justify-self: start; margin: -70px 0 0 0; width: 46%; }
+  .spread .card { grid-column: 1; grid-row: 3; justify-self: end; margin: -60px 0 0 0; max-width: 88%; }
+  .hey .wrap, .unpack .wrap, .gold .top, .students .wrap > .top { grid-template-columns: 1fr; }
+  .cols, .why, .facts, .cases { grid-template-columns: 1fr; }
+  .polas { min-height: 380px; }
+  .prog .wrap { grid-template-columns: 1fr; }
+  .fmt { grid-template-columns: 1fr 1fr; }
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reel img { transition: none; } }
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <span class="name">Надежда Моргун</span>
+    <ul><li><a href="#about">обо мне</a></li><li><a href="#reels">рилсы</a></li><li><a href="#program">программа</a></li><li><a href="#unpacker">распаковщик</a></li><li><a href="#reviews">отзывы</a></li></ul>
+    <a class="pill" href="#buy">участвовать</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker">практикум · 25–26 декабря · онлайн</p>
+    <h1 class="big">блог <em>и</em><br>личный бренд</h1>
+    <div class="spread">
+      <figure class="main"><img src="img/nadezhda.jpg" alt="Надежда Моргун"></figure>
+      <figure class="side"><img src="img/me-cafe.jpg" alt="Надежда в кафе"></figure>
+      <div class="card">
+        <p>Два дня, чтобы найти свои смыслы и собрать рилсы на 2027 год.</p>
+        <small>первая неделя января — золотая неделя контента</small>
+        <div class="row"><a class="pill" href="#buy">участвовать · 1 000 ₽</a><a class="pill ghost" href="#program">программа</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hey" id="about">
+  <div class="wrap sec">
+    <div>
+      <span class="hand">привет, это Надя</span>
+      <h2>продюсер личных брендов, пишу про маркетинг и тренды</h2>
+      <div class="cols">
+        <p>Я помогаю увидеть, о чём ты на самом деле, и упаковать это в блог, который продаёт.</p>
+        <p>На практикуме — то, что я делаю с клиентами: распаковка смыслов и структура рилсов. Только то, что проверила на своём блоге.</p>
+      </div>
+      <div class="facts">
+        <div><b>12&nbsp;900</b><span>подписчиков в моём Instagram за два месяца</span></div>
+        <div><b>1&nbsp;072&nbsp;091</b><span>просмотр на шести моих рилсах</span></div>
+        <div><b>100&nbsp;000+</b><span>подписчиков набрали мои ученицы и клиенты</span></div>
+      </div>
+      <a class="pill" href="#buy">участвовать · 1 000 ₽</a>
+    </div>
+    <div class="polas">
+      <div class="pola a"><img src="img/me-mirror.jpg" alt="Надежда, селфи в зеркале"></div>
+      <div class="pola b"><img src="img/me-cafe-wide.jpg" alt="Надежда в кафе" style="object-position:62% 40%"></div>
+    </div>
+  </div>
+</section>
+
+<section class="reels-sec" id="reels">
+  <div class="wrap sec">
+    <div class="sec-hd">
+      <div><p class="lbl">мои рилсы</p><div class="total"><b>1 млн+</b><span>просмотров на моих рилсах</span></div></div>
+      <p>Нажми на рилс — он откроется в Instagram.</p>
+    </div>
+    <div class="grid" id="grid"></div>
+    <p class="reels-note">просмотры на 19 ноября 2026 · @morgundze</p>
+    <p class="say">Это мой подход — <em>маркетинг личного бренда</em>. Именно им я поделюсь на практикуме.</p>
+  </div>
+</section>
+
+<section class="formula" aria-labelledby="f-h">
+  <div class="wrap sec">
+    <p class="lbl">как я пишу рилсы</p>
+    <h2 class="h2" id="f-h">формула <em>рилса</em></h2>
+    <ol class="eq"><li>заголовок</li><li>контекст</li><li>примеры</li><li>вывод</li></ol>
+    <p class="fsub">На практикуме я расскажу, как пишу рилсы, и покажу свою формулу.</p>
+  </div>
+</section>
+
+<section class="words" aria-hidden="true">
+  <p>смыслы <span>и</span> темы <span>и</span> рилсы</p>
+</section>
+
+<section class="gold" id="why">
+  <div class="wrap sec">
+    <div class="top">
+      <h2>первая неделя января — <em>золотая</em> неделя контента</h2>
+      <p>Время, когда можно набрать максимальное количество подписчиков. Пока все отдыхают, ты готовишься: 25–26 декабря практикум, до 31-го выполняешь задания к практикуму, а с 1 января выходишь в ленту.</p>
+    </div>
+    <div class="cal-scroll" role="group" aria-label="Календарь: практикум 25–26 декабря, задания 27–31 декабря, золотая неделя 1–8 января">
+      <div class="cal">
+        <div class="m"><span class="dec">декабрь</span><span class="jan">январь</span></div>
+        <div class="d">
+          <div class="p"><small>пт</small><b>25</b></div><div class="p"><small>сб</small><b>26</b></div>
+          <div class="s"><small>вс</small><b>27</b></div><div class="s"><small>пн</small><b>28</b></div><div class="s"><small>вт</small><b>29</b></div><div class="s"><small>ср</small><b>30</b></div><div class="s"><small>чт</small><b>31</b></div>
+          <div class="g"><small>пт</small><b>1</b></div><div class="g"><small>сб</small><b>2</b></div><div class="g"><small>вс</small><b>3</b></div><div class="g"><small>пн</small><b>4</b></div><div class="g"><small>вт</small><b>5</b></div><div class="g"><small>ср</small><b>6</b></div><div class="g"><small>чт</small><b>7</b></div><div class="g"><small>пт</small><b>8</b></div>
+        </div>
+        <div class="ph">
+          <div class="a"><b>практикум</b>смыслы и рилсы</div>
+          <div class="b"><b>задания</b>выполняешь задания к практикуму</div>
+          <div class="c"><b>золотая неделя</b>выкладываешь и собираешь своих подписчиков</div>
+        </div>
+      </div>
+    </div>
+    <div class="why">
+      <div><h3>все дома</h3><p>Новогодние каникулы: у людей есть время листать ленту, досматривать рилсы и подписываться на новых людей.</p></div>
+      <div><h3>многие на паузе</h3><p>Блогеры уходят отдыхать и пропадают из ленты. Тем, кто выходит с контентом, достаётся больше внимания.</p></div>
+      <div><h3>новый год — новые подписки</h3><p>В январе люди решают, какими хотят быть в этом году, и ищут, на кого равняться и у кого учиться.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="prog" id="program">
+  <div class="wrap sec">
+    <div class="head"><h2 class="h2">программа</h2><span>два эфира · запись · общий чат · ai-распаковщик</span></div>
+    <article class="day">
+      <span class="d">день 1 · пятница, 25 декабря</span>
+      <h3>распаковка смыслов и поиск тем</h3>
+      <ul><li class="key"><b>ai-распаковщик</b> — проходим мой метод распаковки</li><li>ядро личного бренда: о чём ты на самом деле</li><li>зоны уникальности: что ты делаешь «слишком»</li><li>убеждения на максимум</li><li>3–4 направления блога и темы на январь</li></ul>
+    </article>
+    <article class="day">
+      <span class="d">день 2 · суббота, 26 декабря</span>
+      <h3>структура рилсов</h3>
+      <ul><li>начало, середина, конец — что решают первые 3 секунды</li><li>широкий заход: 7 типов заголовков</li><li>сценарий за 5 шагов</li><li>без шаблонов «100 хуков» — твоя структура под твои темы</li></ul>
+    </article>
+    <figure><img src="img/me-loft-full.jpg" alt="Надежда в лофте"></figure>
+    <div class="fmt">
+      <div><b>2 эфира</b><span>25 и 26 декабря в Zoom</span></div>
+      <div><b>запись</b><span>не успеешь вживую — посмотришь потом</span></div>
+      <div><b>чат</b><span>общий чат с ответами на вопросы</span></div>
+      <div><b>распаковщик</b><span>доступ вместе с практикумом</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="unpack" id="unpacker">
+  <div class="wrap sec">
+    <div>
+      <span class="gift">входит в практикум</span>
+      <h2>ai-распаковщик</h2>
+      <p class="lead">Вместе с доступом к практикуму ты получаешь мой AI-распаковщик.</p>
+      <p class="sub">Это мой метод распаковки, который ты проходишь вместе с нейросетью. Он не выдаёт готовые идеи и сценарии. Он задаёт вопросы, пока ты сама не скажешь: «о, точно, это же то, о чём я всю жизнь хотела говорить».</p>
+      <ul class="outs">
+        <li>смыслы и убеждения, которые мы выкручиваем на максимум</li>
+        <li>твой маркетинг-архетип</li>
+        <li>сильные стороны, которые стоит раскрывать в блоге</li>
+        <li>3–4 направления, в которые ты топишь</li>
+      </ul>
+      <p class="lbl">девять архетипов</p>
+      <ul class="chips"><li>ролевая модель</li><li>лучшая подруга</li><li>bad bitch</li><li>проводник</li><li>girlboss</li><li>lover girl</li><li>эксперт</li><li>икона</li><li>творческая личность</li></ul>
+    </div>
+    <figure class="poster"><img src="img/make-art.jpg" alt="Надпись на синем фоне: goal: make art, be hot."></figure>
+  </div>
+</section>
+
+<section class="students" aria-labelledby="st-h">
+  <div class="wrap sec">
+    <div class="top">
+      <div><p class="lbl" id="st-h">результаты учениц и клиентов</p><p class="huge">100&nbsp;000+</p></div>
+      <p>Подписчиков набрали мои ученицы и клиенты. Ниже — их настоящие результаты.</p>
+    </div>
+    <div class="cases">
+      <div class="case">
+        <div><b>500 тыс.</b><span>просмотров и 5 000 подписчиков с одного рилса про тихую роскошь</span><small>Ольга · мастерская, октябрь 2026</small></div>
+      </div>
+      <div class="case">
+        <div><b>+600</b><span>подписчиков за время мастерской — «учитывая, что я Инстаграм не вела до этого много лет»</span><small>Надежда · мастерская, октябрь 2026</small></div>
+      </div>
+      <div class="case">
+        <div><b>350&nbsp;000&nbsp;₽</b><span>продала своё обучение после мастерской — «мне пишут, сразу покупают»</span><small>Елена · мастерская, октябрь 2026</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rev" id="reviews">
+  <div class="wrap sec">
+    <div class="sec-hd">
+      <h2 class="h2">отзывы <em>про рилсы</em></h2>
+    </div>
+    <div class="wall">
+      <figure class="q"><blockquote>Теперь нет вопросов, где брать идеи, как упаковывать свои мысли, как смотреть на статистику</blockquote><figcaption class="who">Наталия · мастерская, октябрь 2026</figcaption></figure>
+      <figure class="q"><blockquote>Благодаря интенсиву начала снимать рилс, 3 года собиралась, наконец-то пазл сложился</blockquote><figcaption class="who">Анка · практикум, июль 2026</figcaption></figure>
+      <figure class="q"><blockquote>Писать сценарии, оказывается, можно не пыхтя над ними месяцами</blockquote><figcaption class="who">Анна · мастерская, октябрь 2026</figcaption></figure>
+      <figure class="q"><blockquote>Было очень интересно, структурно и действительно полезно. Вы подсветили некоторые вещи с нового ракурса и дали свежий взгляд на тему</blockquote><figcaption class="who">Диана · практикум, сентябрь 2026</figcaption></figure>
+      <figure class="q"><blockquote>Этот продукт помог мне начать наконец-то вести инсту спустя 2 года!!</blockquote><figcaption class="who">Анна · мастерская, октябрь 2026</figcaption></figure>
+      <figure class="q"><blockquote>Этот чатик теперь у меня как настольная книга, куда я прихожу за вашим мышлением, за коррекцией сценариев и за вдохновением</blockquote><figcaption class="who">Дарья · мастерская, октябрь 2026</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="buy">
+  <div class="wrap sec">
+    <h2>начни вести блог <em>в 2027 году</em></h2>
+    <div class="price">1 000 ₽</div>
+    <ul class="incl"><li>2 эфира</li><li>запись</li><li>общий чат</li><li class="k">ai-распаковщик</li></ul>
+    <div class="timer" aria-label="До старта практикума">
+      <div><b id="t-d">00</b><span>дней</span></div>
+      <div><b id="t-h">00</b><span>часов</span></div>
+      <div><b id="t-m">00</b><span>минут</span></div>
+    </div>
+    <div class="pay">
+      <a class="pill" href="https://t.me/morgundze_marketing_bot?start=site" target="_blank" rel="noopener">участвовать</a>
+      <a class="pill ghost" href="https://t.me/morgundze_marketing_bot?start=foreign" target="_blank" rel="noopener">оплата иностранной картой</a>
+    </div>
+    <p class="legal">Оплата проходит в Telegram-боте: картой российского банка, через СБП или иностранной картой. После оплаты бот сразу пришлёт вход в закрытый канал практикума.<br>Нажимая «участвовать», ты принимаешь условия <a href="oferta.html">публичной оферты</a> и&nbsp;<a href="privacy.html">политики конфиденциальности</a>.</p>
+    <span class="meta">25–26 декабря · онлайн · Надежда Моргун</span>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="f-me"><span class="n">Надежда Моргун</span><span class="sep" aria-hidden="true">·</span><a href="https://www.instagram.com/morgundze/" target="_blank" rel="noopener">@morgundze</a></p>
+    <nav class="f-docs" aria-label="Документы"><a href="oferta.html">Публичная оферта</a><a href="privacy.html">Политика конфиденциальности</a><a href="soglasie.html">Согласие на обработку персональных данных</a><a href="rassylka.html">Согласие на рассылку</a></nav>
+    <p class="f-ip">ИП Моргун Надежда Павловна · ИНН 500173390720 · ОГРНИП 323774600679629<br><a href="mailto:morgundze.work@gmail.com">morgundze.work@gmail.com</a> · вопросы в Telegram: <a href="https://t.me/morgundzehelp" target="_blank" rel="noopener">@morgundzehelp</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // рилсы: просмотры из профиля Instagram на 19.11.2026 (как их показывает Instagram)
+  var reels = [
+    ['DZz3FDiJQnn', '229 тыс.'], ['DbdVC09JApS', '212 тыс.'], ['DbGSLmsJj-t', '170 тыс.'],
+    ['DfbpVIuOemS', '146 тыс.'], ['DYjyB8rJkiy', '123 тыс.'], ['Df4Y2sBudpG', '86,2 тыс.']
+  ];
+  var g = document.getElementById('grid'), html = '';
+  reels.forEach(function (r) {
+    html += '<a class="reel" href="https://www.instagram.com/reel/' + r[0] + '/" target="_blank" rel="noopener">' +
+      '<img src="img/reels/' + r[0] + '.jpg" alt="Рилс, ' + r[1] + ' просмотров">' +
+      '<span class="v"><svg viewBox="0 0 11 12" aria-hidden="true"><path d="M0 0l11 6-11 6z"/></svg>' + r[1] + '</span></a>';
+  });
+  g.innerHTML = html;
+
+  // старт 25.12.2026 12:00 МСК (09:00 UTC) — время уточнить
+  var start = Date.UTC(2026, 11, 25, 9, 0, 0);
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function tick() {
+    var left = Math.max(0, start - Date.now());
+    document.getElementById('t-d').textContent = pad(Math.floor(left / 86400000));
+    document.getElementById('t-h').textContent = pad(Math.floor(left % 86400000 / 3600000));
+    document.getElementById('t-m').textContent = pad(Math.floor(left % 3600000 / 60000));
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+</body>
+</html>
