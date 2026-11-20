@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Как я веду блог — Надежда Моргун</title>
+<meta name="description" content="Мой метод ведения блога: четыре шага, которые каждый раз давали рост, — и упражнения, с которых можно начать уже сегодня.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Как я веду блог">
+<meta property="og:description" content="Мой метод: четыре шага, которые каждый раз давали рост. Надежда Моргун, @morgundze">
+<meta property="og:url" content="https://morgundze.github.io/blog/">
+<meta property="og:image" content="https://morgundze.github.io/blog/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/icon.png">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+html, body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+/* layout: журнальная статья. обложка на весь экран (ч/б Париж), дальше одна колонка текста на сером, чёрные полосы для пауз; розовый — только акцент (курсивные слова, номера, кружочки) */
+:root {
+  color-scheme: light;
+  --grey: #ECEAE7;
+  --grey-2: #E1DEDA;
+  --card: #F7F6F4;
+  --ink: #141314;
+  --soft: #6E6964;
+  --line: #CFCAC4;
+  --black: #0E0D0F;
+  --on-black: #F2F0ED;
+  --on-black-soft: #9C968F;
+  --pink: #E8368F;
+  --pink-soft: #F7D3E5;
+  --highlight: #FFE58A;
+  --f-display: 'Oranienbaum', 'Didot', 'Bodoni 72', Georgia, serif;
+  --f-italic: 'Playfair Display', Georgia, serif;
+  --f-body: 'PT Serif', Georgia, serif;
+  --f-mono: 'PT Mono', 'Courier New', monospace;
+}
+* { box-sizing: border-box; }
+body { background: var(--grey); color: var(--ink); font-family: var(--f-body); font-size: 18px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+.wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.col { max-width: 680px; margin: 0 auto; }
+.wide { max-width: 1060px; margin: 0 auto; }
+p { margin: 0; }
+.text { display: grid; gap: 1.05em; }
+.mono { font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); line-height: 1.5; }
+.src { font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.03em; color: var(--soft); }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.005em; line-height: 0.98; margin: 0; text-wrap: balance; }
+h1 i, h2 i, h3 i, .it { font-family: var(--f-italic); font-style: italic; text-transform: none; font-weight: 500; letter-spacing: 0; color: var(--pink); }
+h2 { font-size: clamp(2.4rem, 7.4vw, 4.4rem); }
+h3 { font-size: clamp(1.35rem, 3vw, 1.7rem); line-height: 1.05; }
+.todo { background: var(--highlight); color: var(--ink); padding: 0 4px; border-radius: 3px; font-family: var(--f-mono); font-size: 0.7em; letter-spacing: 0.02em; text-transform: none; }
+
+/* обложка на весь экран */
+.cover { position: relative; min-height: 100svh; display: grid; align-items: end; background: var(--black); color: #fff; overflow: hidden; }
+.cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 26%; filter: grayscale(1) contrast(1.06); }
+.cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(14,13,15,.08) 0%, rgba(14,13,15,.2) 35%, rgba(14,13,15,.62) 62%, rgba(14,13,15,.94) 100%); }
+.cover h1, .cover .sub, .cover .mono { text-shadow: 0 2px 18px rgba(0,0,0,.45); }
+.cover-text { position: relative; z-index: 1; text-align: center; display: grid; gap: 14px; justify-items: center; padding-block: 0 calc(clamp(32px, 7vh, 72px) + env(safe-area-inset-bottom, 0px)); }
+.cover .mono { color: rgba(255,255,255,.72); }
+.cover h1 { font-size: clamp(3.6rem, 13vw, 8.6rem); line-height: 0.9; color: #fff; }
+.cover h1 i { font-size: 0.8em; color: #fff; }
+.cover .sub { max-width: 34ch; font-size: clamp(1rem, 2vw, 1.15rem); line-height: 1.45; color: rgba(255,255,255,.9); }
+.start { margin-top: 6px; color: #fff; text-decoration: none; border: 1px solid rgba(255,255,255,.55); padding: 11px 22px; border-radius: 999px; font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.start:hover, .start:focus-visible { background: #fff; color: var(--black); outline: none; }
+
+/* вступление */
+.intro { padding-block: clamp(60px, 10vw, 110px) clamp(50px, 8vw, 90px); }
+.hello { font-family: var(--f-italic); font-style: italic; font-weight: 500; font-size: clamp(1.7rem, 4vw, 2.2rem); color: var(--pink); line-height: 1.1; }
+.thesis { font-family: var(--f-display); text-transform: uppercase; font-size: clamp(2.1rem, 6vw, 3.6rem); line-height: 1.0; text-wrap: balance; }
+.thesis .it { color: var(--pink); }
+.flights { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); margin-top: 6px; }
+.flights div { padding: 16px 14px 18px 0; display: grid; gap: 6px; align-content: start; }
+.flights div + div { padding-left: 16px; border-left: 1px solid var(--line); }
+.flights b { font-family: var(--f-display); font-weight: 400; font-size: clamp(1.9rem, 5vw, 2.8rem); line-height: 1; font-variant-numeric: tabular-nums; }
+.flights span { font-size: 0.9rem; color: var(--soft); line-height: 1.35; }
+.me { display: grid; grid-template-columns: 1fr 1.1fr; gap: 22px; align-items: end; margin-top: 10px; }
+.me img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 30%; display: block; filter: grayscale(1); }
+.nums { display: grid; gap: 14px; }
+.nums div { display: grid; gap: 2px; border-top: 1px solid var(--line); padding-top: 10px; }
+.nums b { font-family: var(--f-display); font-weight: 400; font-size: 2.1rem; line-height: 1; }
+.nums span { font-size: 0.86rem; color: var(--soft); }
+.contents { display: grid; gap: 0; margin-top: 8px; }
+.contents a { display: grid; grid-template-columns: 52px 1fr; gap: 10px; align-items: baseline; text-decoration: none; color: inherit; border-top: 1px solid var(--line); padding-block: 12px; }
+.contents a:last-child { border-bottom: 1px solid var(--line); }
+.contents b { font-family: var(--f-display); font-weight: 400; color: var(--pink); font-size: 1.5rem; line-height: 1; }
+.contents span { font-family: var(--f-display); text-transform: uppercase; font-size: 1.25rem; line-height: 1.1; }
+.contents a:hover span, .contents a:focus-visible span { color: var(--pink); }
+.contents a:focus-visible { outline: 2px solid var(--pink); outline-offset: 2px; }
+
+/* шаги */
+.step { padding-block: clamp(60px, 9vw, 100px); border-top: 1px solid var(--line); }
+.step-head { display: grid; gap: 14px; margin-bottom: clamp(26px, 4vw, 40px); }
+.step-no { display: flex; align-items: baseline; gap: 14px; }
+.step-no b { font-family: var(--f-display); font-weight: 400; font-size: clamp(4rem, 11vw, 6.4rem); line-height: 0.8; color: var(--pink); }
+.quote { background: var(--card); border-left: 3px solid var(--pink); padding: 20px 22px; display: grid; gap: 8px; }
+.quote p:first-child { font-family: var(--f-italic); font-style: italic; font-size: 1.15rem; line-height: 1.5; }
+.pull { font-family: var(--f-display); text-transform: uppercase; font-size: clamp(1.7rem, 4.6vw, 2.6rem); line-height: 1.04; text-wrap: balance; padding-block: 10px; }
+.pull .it { color: var(--pink); }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-block: 8px; align-items: center; }
+.pair img { width: 100%; height: auto; display: block; }
+.pair.single { grid-template-columns: 1fr; max-width: 420px; }
+.pair.single img { aspect-ratio: auto; height: auto; }
+
+/* выпиши */
+.write { background: var(--black); color: var(--on-black); padding: clamp(20px, 4vw, 30px); display: grid; gap: 14px; margin-top: 10px; }
+.write .mono { color: var(--on-black-soft); }
+.write h3 { color: #fff; }
+.write h3 i { color: var(--pink); }
+.write .hint { color: var(--on-black-soft); font-size: 0.95rem; }
+.field { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: start; }
+.field label { font-family: var(--f-display); font-size: 1.6rem; line-height: 1.2; color: var(--pink); }
+textarea {
+  width: 100%; resize: none; overflow: hidden; display: block; border: 0; border-bottom: 1px solid rgba(255,255,255,.35);
+  background: transparent; color: #fff; font-family: var(--f-italic); font-style: italic; font-size: 1.25rem; line-height: 1.45;
+  padding: 6px 2px 8px; min-height: 46px;
+}
+textarea::placeholder { color: rgba(255,255,255,.35); }
+textarea:focus-visible { outline: none; border-bottom-color: var(--pink); }
+
+/* формула — кружочки */
+.circles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-block: 10px; }
+.circle { aspect-ratio: 1; border-radius: 50%; border: 1.5px solid var(--ink); display: grid; place-content: center; text-align: center; padding: 14%; gap: 6px; background: var(--card); }
+.circle b { font-family: var(--f-display); font-weight: 400; text-transform: uppercase; font-size: clamp(1.05rem, 2.2vw, 1.4rem); line-height: 1.02; }
+.circle span { font-size: 0.82rem; line-height: 1.3; color: var(--soft); }
+.circle.hot { background: var(--pink); border-color: var(--pink); color: #fff; }
+.circle.hot span { color: rgba(255,255,255,.88); }
+.plus { font-family: var(--f-display); font-size: 1.6rem; color: var(--soft); }
+
+/* каждый день */
+.flight-list { display: grid; gap: 0; }
+.flight-list > div { display: grid; grid-template-columns: 170px 1fr; gap: 18px; padding-block: 18px; border-top: 1px solid var(--line); }
+.flight-list > div:last-child { border-bottom: 1px solid var(--line); }
+.flight-list b { font-family: var(--f-display); font-weight: 400; font-size: 2.1rem; line-height: 1; display: block; }
+.flight-list .mono { margin-top: 6px; display: block; }
+.ba { display: grid; grid-template-columns: 1fr; gap: 6px; margin-top: 12px; max-width: 520px; }
+.ba .arr { font-family: var(--f-display); font-size: 1.6rem; line-height: 1; color: var(--pink); padding-left: 6px; }
+.prof { margin: 0; display: grid; gap: 4px; }
+.prof img { width: 100%; display: block; border: 1px solid var(--line); border-radius: 6px; }
+.slot { border: 1.5px dashed var(--line); background: var(--card); aspect-ratio: 9/13; display: grid; place-content: center; text-align: center; gap: 6px; padding: 10px; }
+.slot b { font-family: var(--f-display); font-weight: 400; font-size: 1.7rem; line-height: 1; }
+.slot .mono { font-size: 0.58rem; }
+
+/* чёрная полоса: блог работает на тебя */
+.black { background: var(--black); color: var(--on-black); padding-block: clamp(64px, 10vw, 110px); }
+.black .mono, .black .src { color: var(--on-black-soft); }
+.black h2 { color: #fff; }
+.media-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(26px, 5vw, 56px); align-items: start; margin-top: clamp(26px, 4vw, 40px); }
+.mlist { list-style: none; margin: 0; padding: 0; display: grid; }
+.mlist li { padding-block: 13px; border-top: 1px solid rgba(255,255,255,.16); display: grid; gap: 2px; }
+.mlist b { font-family: var(--f-display); font-weight: 400; font-size: 1.35rem; text-transform: uppercase; line-height: 1.1; color: #fff; }
+.mlist span { color: var(--on-black-soft); font-size: 0.95rem; line-height: 1.5; }
+.shots { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.shot { margin: 0; display: grid; gap: 8px; }
+.shot img { width: 100%; display: block; }
+.shot:nth-child(2) { margin-top: 36px; }
+.shot figcaption { font-size: 0.8rem; color: var(--on-black-soft); }
+
+/* элементы больших рилсов */
+.elements { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 10px; }
+.el { display: grid; gap: 8px; align-content: start; }
+.el .dot { aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: var(--pink); display: grid; place-items: center; }
+.el .dot img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); }
+.el .dot.empty { background: var(--pink); color: #fff; font-family: var(--f-italic); font-style: italic; font-size: 2.4rem; }
+.el b { font-family: var(--f-display); font-weight: 400; text-transform: uppercase; font-size: 1.2rem; line-height: 1.05; }
+.el span { font-size: 0.84rem; color: var(--soft); line-height: 1.35; }
+.reels { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-top: 16px; }
+.reel { display: grid; gap: 6px; color: inherit; text-decoration: none; min-width: 0; }
+.reel img { width: 100%; aspect-ratio: 9/16; object-fit: cover; display: block; }
+.reel b { font-family: var(--f-display); font-weight: 400; font-size: 1.3rem; line-height: 1; }
+.reel:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
+
+/* схема элементов: кружки вокруг reels */
+.schema { max-width: 640px; margin-top: 6px; }
+.schema svg { width: 100%; height: auto; display: block; }
+.schema .schema-narrow { display: none; }
+
+/* разбор: как я пишу рилс */
+.how-top { display: grid; grid-template-columns: 1fr 200px; gap: clamp(24px, 4vw, 44px); align-items: end; margin-bottom: clamp(26px, 4vw, 40px); }
+.how-top aside { display: grid; gap: 8px; }
+.how-top aside img { width: 100%; aspect-ratio: 9/16; object-fit: cover; display: block; }
+.how-top aside b { font-family: var(--f-display); font-weight: 400; font-size: 1.9rem; line-height: 1; }
+.phase { display: grid; grid-template-columns: 60px 1fr; gap: 14px; padding-block: 22px; border-top: 1px solid var(--line); }
+.phase .n { font-family: var(--f-display); font-size: 2.6rem; line-height: 0.85; color: var(--pink); }
+.phase .body { display: grid; gap: 12px; min-width: 0; }
+.phase h3 { font-size: clamp(1.4rem, 3.2vw, 1.8rem); }
+.voice { background: var(--card); padding: 16px 18px; display: grid; gap: 6px; }
+.voice p:first-child { font-family: var(--f-italic); font-style: italic; font-size: 1.08rem; line-height: 1.55; }
+.hooks { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.hooks li { display: grid; grid-template-columns: 26px 1fr; gap: 8px; }
+.hooks li::before { content: "—"; color: var(--pink); font-family: var(--f-display); font-size: 1.3rem; line-height: 1.3; }
+.script-card { background: #fff; padding: clamp(20px, 4vw, 32px); display: grid; gap: 12px; box-shadow: 0 22px 40px -28px rgba(14,13,15,.45); margin-top: 8px; }
+.script-card .lines { display: grid; gap: 10px; }
+.script-card .lines p { font-size: 1.06rem; line-height: 1.5; }
+.pulled { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.pulled li { border-top: 2px solid var(--ink); padding-top: 10px; display: grid; gap: 4px; }
+.pulled li.hot { border-top-color: var(--pink); }
+.pulled .mono { color: var(--ink); }
+.pulled li.hot .mono { color: var(--pink); }
+.pulled p { font-family: var(--f-italic); font-style: italic; font-size: 1rem; line-height: 1.45; }
+.field.wide { grid-template-columns: 1fr; gap: 4px; }
+.field.wide label { font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pink); line-height: 1.5; }
+.field.wide .what { color: var(--on-black-soft); font-size: 0.92rem; line-height: 1.45; }
+.write .row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.write .status { font-family: var(--f-mono); font-size: 0.74rem; color: var(--pink); }
+
+/* убеждения (шаг 2) */
+.sub-h { font-size: clamp(1.7rem, 4.4vw, 2.4rem); margin-top: 22px; }
+.write .ex { border: 1px solid rgba(255,255,255,.2); padding: 14px 16px; display: grid; gap: 10px; }
+.write .ex .r { display: grid; grid-template-columns: 180px 1fr; gap: 12px; align-items: baseline; }
+.write .ex .r p:first-child { font-family: var(--f-mono); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--on-black-soft); }
+.write .ex .r p:last-child { font-family: var(--f-italic); font-style: italic; color: #fff; font-size: 1.08rem; line-height: 1.45; }
+.write .ex .r.max p:last-child { color: var(--pink); }
+.belief { display: grid; grid-template-columns: 34px 1fr; gap: 10px; border-top: 1px solid rgba(255,255,255,.18); padding-top: 14px; }
+.belief .bn { font-family: var(--f-display); font-size: 1.6rem; line-height: 1.2; color: var(--pink); }
+.bfields { display: grid; gap: 2px; min-width: 0; }
+.bfields .mini { font-family: var(--f-mono); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--on-black-soft); margin-top: 8px; }
+.bchecks { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 10px; }
+.bchecks label { display: inline-flex; gap: 8px; align-items: center; font-size: 0.92rem; color: var(--on-black); cursor: pointer; }
+.bchecks input { width: 18px; height: 18px; accent-color: var(--pink); margin: 0; }
+
+/* финал */
+.final { padding-block: clamp(64px, 10vw, 110px) 0; border-top: 1px solid var(--line); }
+.week { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; }
+.week div { border-top: 2px solid var(--pink); padding-top: 12px; display: grid; gap: 4px; }
+.week b { font-family: var(--f-display); font-weight: 400; font-size: 1.25rem; text-transform: uppercase; line-height: 1.05; }
+.week span { font-size: 0.9rem; color: var(--soft); line-height: 1.45; }
+.prac { background: var(--black); color: var(--on-black); margin-top: clamp(50px, 8vw, 80px); padding-block: clamp(50px, 8vw, 84px); }
+.prac .mono { color: var(--on-black-soft); }
+.prac h2 { color: #fff; font-size: clamp(2.6rem, 9vw, 5rem); }
+.prac-grid { display: grid; gap: 30px; }
+.pdays { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+.pday { display: grid; gap: 8px; align-content: start; border-top: 1px solid rgba(255,255,255,.2); padding-top: 14px; }
+.pday h3 { color: #fff; font-size: 1.45rem; }
+.pday ul { margin: 0; padding-left: 1.1em; display: grid; gap: 5px; font-size: 0.96rem; color: var(--on-black); }
+.ai { background: #1D1B1E; padding: clamp(18px, 3vw, 28px); display: grid; gap: 14px; border-left: 3px solid var(--pink); }
+.ai-nums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.ai-nums div { display: grid; gap: 4px; align-content: start; }
+.ai-nums b { font-family: var(--f-display); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1; color: var(--pink); }
+.ai-nums span { font-size: 0.86rem; line-height: 1.35; color: var(--on-black-soft); }
+.cta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.btn { display: inline-flex; align-items: center; justify-content: center; background: var(--pink); color: #fff; text-decoration: none; padding: 15px 26px; border-radius: 999px; font-family: var(--f-mono); font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.btn:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.cta .link { color: var(--on-black); font-size: 0.95rem; }
+footer { background: var(--black); color: var(--on-black-soft); padding-block: 0 calc(30px + env(safe-area-inset-bottom, 0px)); }
+footer p { font-size: 0.86rem; border-top: 1px solid rgba(255,255,255,.12); padding-top: 22px; }
+
+/* компьютер: картинки сбоку от текста (на телефоне — как было, в одну колонку) */
+@media (min-width: 1000px) {
+  #step1 > .col, #step2 > .col, #step3 > .col, #step4 > .col { max-width: 1060px; }
+  #step1 .text, #step2 .text, #step3 .text, #step4 .text { display: grid; grid-template-columns: minmax(0, 640px) minmax(0, 1fr); column-gap: 56px; align-items: start; }
+  #step1 .text > *, #step2 .text > *, #step3 .text > *, #step4 .text > * { grid-column: 1; }
+  #step1 .text > .pair, #step2 .text > .pair, #step4 .text > .pair, #step3 .text > .circles { grid-column: 2; position: sticky; top: 24px; margin: 0; }
+  #step1 .text > .pair, #step2 .text > .pair, #step4 .text > .pair { grid-template-columns: 1fr; max-width: none; }
+  #step1 .text > .pair { grid-row: 1 / span 6; }
+  #step2 .text > .pair { grid-row: 1 / span 5; }
+  #step4 .text > .pair { grid-row: 1 / span 4; }
+  #step3 .text > .circles { grid-row: 1 / span 3; grid-template-columns: 1fr 1fr; max-width: 360px; }
+}
+
+
+@media (max-width: 820px) {
+  .media-grid { grid-template-columns: 1fr; }
+  .elements { grid-template-columns: repeat(3, 1fr); row-gap: 20px; }
+  .reels { grid-template-columns: repeat(3, 1fr); }
+  .pdays, .week { grid-template-columns: 1fr; }
+  .ai-nums { grid-template-columns: 1fr 1fr; }
+  .circles { grid-template-columns: 1fr 1fr; max-width: 440px; }
+}
+@media (max-width: 560px) {
+  body { font-size: 17px; }
+  .flights { grid-template-columns: 1fr; }
+  .flights div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+  .me { grid-template-columns: 1fr; }
+  .me img { max-width: 300px; }
+  .flight-list > div { grid-template-columns: 1fr; gap: 6px; }
+  .elements { grid-template-columns: 1fr 1fr; }
+  .schema .schema-wide { display: none; }
+  .schema .schema-narrow { display: block; max-width: 400px; }
+  .how-top { grid-template-columns: 1fr; }
+  .how-top aside { grid-template-columns: 110px 1fr; align-items: end; column-gap: 14px; }
+  .how-top aside img { grid-row: span 2; }
+  .pulled { grid-template-columns: 1fr; }
+  .phase { grid-template-columns: 36px 1fr; gap: 10px; }
+  .phase .n { font-size: 2rem; }
+  .write .ex .r { grid-template-columns: 1fr; gap: 2px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<header class="cover">
+  <img src="img/paris.jpg" alt="Эйфелева башня в окне машины, чёрно-белое фото">
+  <div class="cover-text wrap">
+    <p class="mono">статья · Надежда Моргун · @morgundze</p>
+    <h1>как я веду <i>блог</i></h1>
+    <p class="sub">мой метод: четыре шага, которые каждый раз давали рост — и с которых можно начать уже сегодня</p>
+    <a class="start" href="#intro">читать · 10 минут ↓</a>
+  </div>
+</header>
+<main>
+  <!-- вступление -->
+  <section class="intro wrap" id="intro">
+    <div class="col text" style="gap:1.3em">
+      <p class="hello">привет, это Надя</p>
+      <p>&nbsp;я продюсер личных брендов и маркетолог, и всё, что я рассказываю, я сначала проверяю на своём блоге. и за этот год я точно поняла одну вещь:</p>
+      <p class="thesis">в блоге всегда будет результат, <span class="it">если ты его ведёшь</span></p>
+      <p>невозможно, чтобы ты что-то делал, а результата не было. за год у меня было три взлёта. и каждый раз активный рост начинался тогда, когда я сфокусированно снимала рилс каждый день.</p>
+      <div class="flights">
+        <div><b>1 000+</b><span>март — апрель 2026</span></div>
+        <div><b>10 000</b><span>за два месяца, май — июль</span></div>
+        <div><b>1 000</b><span>человек прошли мои продукты за пять месяцев</span></div>
+      </div>
+      <div class="me">
+        <img src="img/me-cafe.jpg" alt="Надежда Моргун">
+        <div class="nums">
+          <div><b>12 995</b><span>подписчиков в Instagram</span></div>
+          <div><b>1 млн+</b><span>просмотров на моих рилсах</span></div>
+          <div><b>1 220+</b><span>подписчиков на YouTube · 43 612 просмотров видео</span></div>
+        </div>
+      </div>
+      <p>я разложила свой метод на четыре шага. это то, что я делаю сама, и то, по чему ведут блог мои ученицы и клиенты.</p>
+      <nav class="contents" aria-label="шаги">
+        <a href="#step1"><b>01</b><span>пойми, о чём твой блог</span></a>
+        <a href="#step2"><b>02</b><span>выкрути позицию на максимум</span></a>
+        <a href="#step3"><b>03</b><span>формула рилса</span></a>
+        <a href="#step4"><b>04</b><span>снимай каждый день</span></a>
+        <a href="#how"><b>+</b><span>разбор: как я пишу рилс</span></a>
+        <a href="#beliefs"><b>+</b><span>упражнение: откуда брать убеждения</span></a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- шаг 1 -->
+  <section class="step wrap" id="step1">
+    <div class="col">
+      <div class="step-head">
+        <div class="step-no"><b>01</b><span class="mono">шаг первый · главный</span></div>
+        <h2>пойми, о чём <i>твой блог</i></h2>
+      </div>
+      <div class="text">
+        <p>самое главное — понять, о чём ты ведёшь блог. я выбрала тему, которая мне&nbsp; интересна, — маркетинг — и вокруг неё всё раскручивала.</p>
+        <p>очень многих в ведении блога стопорит то, что они не знают, о чём говорить и что снимать. о работе говорить не хочется, поэтому сохраняешь тысячу и одну идею — и в итоге ничего не снимаешь.</p>
+        <p>при этом вести блог совсем не значит рассказывать всё о своей жизни или о своей работе. есть куда более важные вещи, за которые тебя узнают, запоминают среди тысячи одинаковых аккаунтов и выбирают.</p>
+        <div class="quote">
+          <p>сильный личный бренд — это на 80% та тема, о которой ты готова говорить часами. то, о чём ты бесконечно рассуждаешь, с чем люди идут именно к тебе. оставшиеся 20% — твои якоря: стиль, ритуалы, образ жизни, вкусы.</p>
+          <p class="src">мой рилс, 04.06.2026</p>
+        </div>
+        <p>если кажется, что в голове каша и ты «обо всём», — у каждого есть ядро личного бренда, вокруг которого складываются все сюжетные линии блога. чтобы его найти, ответь себе на вопрос: о чём ты могла бы говорить часами, даже если бы тебе за это не платили?</p>
+        <div class="pair"><img src="img/pins/pin-333.jpg" alt="журналы и книги на столе"><img src="img/pins/pin-262.jpg" alt="текст «the first time I walked in Paris»"></div>
+        <div class="write">
+          <p class="mono">выпиши</p>
+          <h3>три вектора, о которых ты <i>готова говорить</i></h3>
+          <p class="hint">они не обязательно должны быть связаны с работой. подсказка: зачем к тебе приходят друзья и чем ты их вдохновляешь?</p>
+          <div class="field"><label for="v1">1</label><textarea id="v1" rows="1" placeholder="например, маркетинг и бренды"></textarea></div>
+          <div class="field"><label for="v2">2</label><textarea id="v2" rows="1" placeholder="например, жизнь на Бали"></textarea></div>
+          <div class="field"><label for="v3">3</label><textarea id="v3" rows="1" placeholder="например, отношения"></textarea></div>
+          <p class="hint">ответы сохраняются только у тебя в браузере.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- шаг 2 -->
+  <section class="step wrap" id="step2">
+    <div class="col">
+      <div class="step-head">
+        <div class="step-no"><b>02</b><span class="mono">шаг второй</span></div>
+        <h2>выкрути позицию <i>на максимум</i></h2>
+      </div>
+      <div class="text">
+        <p>чтобы рилсы усиливать, я выкручиваю на максимум свои убеждения. я не боюсь заявлять о своей позиции.</p>
+        <p class="pull">люди выбирают блоги, где позиция считывается. <span class="it">не бойся вызывать эмоции</span></p>
+        <p>когда с тобой можно согласиться или не согласиться, когда ты нравишься или не нравишься — тебя запоминают. не стоит бояться вызывать эмоции, потому что это буквально основная задача блога.</p>
+        <div class="quote">
+          <p>"я искренне не понимаю, как маркетологи без высшего образования могут что-то говорить о маркетинге."</p>
+          <p class="src">мой рилс про высшее образование, 13.10.2026 — 41,9 тыс. просмотров</p>
+        </div>
+        <p>с такой позицией можно спорить — и это нормально. при этом стоит помнить: плохой комментарий никогда не напишет человек, у которого много аудитории. тот, кто сам прошёл путь блогерства, знает, как это работает, и никогда не скажет, что то, что ты делаешь в начале, — плохо.</p>
+        <div class="pair"><img src="img/pins/pin-95.jpg" alt="сообщение «Niche &amp; sexy»"><img src="img/pins/pin-7.jpg" alt="плакат «everything I want is already mine»"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- шаг 3 -->
+  <section class="step wrap" id="step3">
+    <div class="col">
+      <div class="step-head">
+        <div class="step-no"><b>03</b><span class="mono">шаг третий</span></div>
+        <h2>формула <i>рилса</i></h2>
+      </div>
+      <div class="text">
+        <p>все мои рилсы написаны по одной формуле. успешный рилс — тот, в котором есть четыре элемента:</p>
+        <div class="circles">
+          <div class="circle"><b>доказа­тельства</b><span>инфоповод, тренд, факт: что случилось</span></div>
+          <div class="circle"><b>оценка</b><span>твоё мнение — за него тебя и выбирают</span></div>
+          <div class="circle hot"><b>позиция на максимум</b><span>то, с чем можно поспорить</span></div>
+          <div class="circle"><b>вопрос</b><span>на него хочется ответить в комментариях</span></div>
+        </div>
+        <p>сначала я привожу доказательства: инфоповод, тренд, всё, что можно прописать фактами. потом даю свою оценку — своё мнение, за которое меня и выбирают. дальше выкручиваю позицию на максимум. и в конце задаю вопрос, на который хочется ответить.</p>
+        <p>доказательства без оценки — это пересказ новостей. оценка без доказательств — просто мнение. а вместе с позицией получается рилс, о котором спорят, который пересылают и после которого подписываются.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- шаг 4 -->
+  <section class="step wrap" id="step4">
+    <div class="col">
+      <div class="step-head">
+        <div class="step-no"><b>04</b><span class="mono">шаг четвёртый</span></div>
+        <h2>снимай <i>каждый день</i></h2>
+      </div>
+      <div class="text">
+        <p>каждый активный рост в моём блоге начинался тогда, когда я сфокусированно снимала рилс каждый день. вот как это было.</p>
+        <div class="flight-list">
+          <div><div><b>1 000+</b><span class="mono">март — апрель</span></div><p>я сразу снимала и выкладывала рилс каждый день. многие из них потом залетели.</p></div>
+          <div><div><b>10 000</b><span class="mono">за два месяца</span></div><p>тема трендов в маркетинге привела в мой блог больше 10 тысяч аудитории за пару месяцев.</p></div>
+          <div><div><b>+1 000</b><span class="mono">за неделю</span></div><div><p>в ноябре я провела эксперимент: снова начала выкладывать рилс каждый день — и за неделю пришла 1 000 новых подписчиков.</p>
+            <div class="ba"><figure class="prof"><span class="mono">было</span><img src="img/profile-before.jpg" alt="профиль @morgundze: 11.9k подписчиков"></figure><span class="arr" aria-hidden="true">↓</span><figure class="prof"><span class="mono">стало · через неделю</span><img src="img/profile-after.jpg" alt="профиль @morgundze: 12.9k подписчиков"></figure></div>
+          </div></div>
+        </div>
+        <div class="quote">
+          <p>"до тех пор, пока ты не начнёшь делать каждый день — или хотя бы вообще делать, — никакого результата не будет."</p>
+          <p class="src">мой рилс, 25.07.2026</p>
+        </div>
+        <p>за каждым рилсом, который приносит тысячи новой аудитории, стоит непрерывная работа и выкладка контента каждый день. любой результат требует пути.</p>
+        <div class="pair single"><img src="img/pins/pin-352.jpg" alt="две чашки кофе на столе"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- блог работает на тебя -->
+  <section class="black wrap">
+    <div class="wide">
+      <div class="col" style="margin-left:0; display:grid; gap:16px">
+        <p class="mono">а потом блог начинает работать на тебя</p>
+        <h2>мой блог воспринимают как <i>камерное сми</i></h2>
+      </div>
+      <div class="media-grid">
+        <div class="text">
+          <p>«говорю то, о чём люблю, и люблю то, о чём говорю» — буквально моё правило в ведении блога. поэтому, когда мои рилсы доходят до адресатов, становится особенно приятно.</p>
+          <ul class="mlist">
+            <li><b>Ибрагим Гациев</b><span>основатель State Venice, бывший владелец Planta Rosa, ответил под моим рилсом: «спасибо за поддержку»</span></li>
+            <li><b>PUSY</b><span>хотели маркетинговый разбор</span></li>
+            <li><b>MIXIT</b><span>присылали свой инфоповод</span></li>
+            <li><b>PR Насти Мироновой</b><span>отправляли пресс-релизы</span></li>
+            <li><b>PeopleTalk</b><span>взял мой комментарий о трендах — я на первой странице рядом с Юлией Гайдуковой и Стешей Маликовой</span></li>
+          </ul>
+          <p>и всё с одной целью — чтобы я сняла про это рилс. <br><br>год назад, выкладывая своё первое видео, я вряд ли думала, что большие бренды будут хотеть оказаться в моих разборах. но, наверное, где-то в глубине души я об этом точно знала.</p>
+        </div>
+        <div class="shots">
+          <figure class="shot"><img src="img/ibragim.jpg" alt="комментарий Ибрагима Гациева: спасибо за поддержку"><figcaption>комментарий Ибрагима Гатциева</figcaption></figure>
+          <figure class="shot"><img src="img/peopletalk.jpg" alt="статья PeopleTalk с Надеждой Моргун"><figcaption>PeopleTalk, 20.10.2026</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- самые большие рилсы -->
+  <section class="step wrap">
+    <div class="wide">
+      <div class="col" style="margin-left:0; display:grid; gap:16px; margin-bottom:28px">
+        <p class="mono">но главное</p>
+        <h2>все свои самые большие рилсы я написала <i>по одной формуле</i></h2>
+        <p>а из каких элементов они состоят? я всегда отталкиваюсь от глобального тренда, от своего убеждения, от инфоповода, от известной личности или от тем, которые интересны мне самой.</p>
+      </div>
+      <div class="schema">
+        <svg class="schema-wide" viewBox="0 0 600 430" role="img" aria-label="рилс состоит из: глобальный тренд, убеждение, инфоповод, известная личность, то, что интересно мне"><circle cx="140" cy="100" r="66" fill="#F7F6F4" stroke="#141314" stroke-width="1.5"/><text x="140" y="96.5" text-anchor="middle" font-size="14" fill="#141314" font-family="PT Mono, Courier New, monospace" letter-spacing="1">ГЛОБАЛЬНЫЙ</text><text x="140" y="113.3" text-anchor="middle" font-size="14" fill="#141314" font-family="PT Mono, Courier New, monospace" letter-spacing="1">ТРЕНД</text><circle cx="468" cy="86" r="54" fill="#F7F6F4" stroke="#141314" stroke-width="1.5"/><text x="468" y="90.9" text-anchor="middle" font-size="14" fill="#141314" font-family="PT Mono, Courier New, monospace" letter-spacing="1">УБЕЖДЕНИЕ</text><circle cx="494" cy="270" r="60" fill="#F7F6F4" stroke="#141314" stroke-width="1.5"/><text x="494" y="274.9" text-anchor="middle" font-size="14" fill="#141314" font-family="PT Mono, Courier New, monospace" letter-spacing="1">ИНФОПОВОД</text><circle cx="300" cy="352" r="58" fill="#F7F6F4" stroke="#141314" stroke-width="1.5"/><text x="300" y="348.5" text-anchor="middle" font-size="14" fill="#141314" font-family="PT Mono, Courier New, monospace" letter-spacing="1">ИЗВЕСТНАЯ</text><text x="300" y="365.3" text-anchor="middle" font-size="14" fill="#141314" font-family="PT Mono, Courier New, monospace" letter-spacing="1">ЛИЧНОСТЬ</text><circle cx="112" cy="292" r="52" fill="#F7F6F4" stroke="#141314" stroke-width="1.5"/><text x="112" y="280.1" text-anchor="middle" font-size="14" fill="#141314" font-family="PT Mono, Courier New, monospace" letter-spacing="1">ТО, ЧТО</text><text x="112" y="296.9" text-anchor="middle" font-size="14" fill="#141314" font-family="PT Mono, Courier New, monospace" letter-spacing="1">ИНТЕРЕСНО</text><text x="112" y="313.7" text-anchor="middle" font-size="14" fill="#141314" font-family="PT Mono, Courier New, monospace" letter-spacing="1">МНЕ</text><circle cx="300" cy="205" r="78" fill="#E8368F"/><text x="300" y="217.0" text-anchor="middle" font-size="40" fill="#ffffff" font-family="Playfair Display, Georgia, serif" font-style="italic">reels</text></svg>
+        <svg class="schema-narrow" viewBox="0 0 360 490" role="img" aria-label="рилс состоит из: глобальный тренд, убеждение, инфоповод, известная личность, то, что интересно мне"><circle cx="88" cy="80" r="58" fill="#F7F6F4" stroke="#141314" stroke-width="1.5"/><text x="88" y="77.0" text-anchor="middle" font-size="12" fill="#141314" font-family="PT Mono, Courier New, monospace" letter-spacing="1">ГЛОБАЛЬНЫЙ</text><text x="88" y="91.4" text-anchor="middle" font-size="12" fill="#141314" font-family="PT Mono, Courier New, monospace" letter-spacing="1">ТРЕНД</text><circle cx="280" cy="92" r="50" fill="#F7F6F4" stroke="#141314" stroke-width="1.5"/><text x="280" y="96.2" text-anchor="middle" font-size="12" fill="#141314" font-family="PT Mono, Courier New, monospace" letter-spacing="1">УБЕЖДЕНИЕ</text><circle cx="298" cy="300" r="50" fill="#F7F6F4" stroke="#141314" stroke-width="1.5"/><text x="298" y="304.2" text-anchor="middle" font-size="12" fill="#141314" font-family="PT Mono, Courier New, monospace" letter-spacing="1">ИНФОПОВОД</text><circle cx="186" cy="420" r="56" fill="#F7F6F4" stroke="#141314" stroke-width="1.5"/><text x="186" y="417.0" text-anchor="middle" font-size="12" fill="#141314" font-family="PT Mono, Courier New, monospace" letter-spacing="1">ИЗВЕСТНАЯ</text><text x="186" y="431.4" text-anchor="middle" font-size="12" fill="#141314" font-family="PT Mono, Courier New, monospace" letter-spacing="1">ЛИЧНОСТЬ</text><circle cx="66" cy="322" r="52" fill="#F7F6F4" stroke="#141314" stroke-width="1.5"/><text x="66" y="311.8" text-anchor="middle" font-size="12" fill="#141314" font-family="PT Mono, Courier New, monospace" letter-spacing="1">ТО, ЧТО</text><text x="66" y="326.2" text-anchor="middle" font-size="12" fill="#141314" font-family="PT Mono, Courier New, monospace" letter-spacing="1">ИНТЕРЕСНО</text><text x="66" y="340.6" text-anchor="middle" font-size="12" fill="#141314" font-family="PT Mono, Courier New, monospace" letter-spacing="1">МНЕ</text><circle cx="180" cy="240" r="62" fill="#E8368F"/><text x="180" y="250.2" text-anchor="middle" font-size="34" fill="#ffffff" font-family="Playfair Display, Georgia, serif" font-style="italic">reels</text></svg>
+      </div>
+      <p class="mono" style="margin-top:52px">мои самые большие рилсы · больше 1 млн просмотров на шести рилсах</p>
+      <div class="reels">
+        <a class="reel" href="https://www.instagram.com/reel/DZz3FDiJQnn/" target="_blank" rel="noopener"><img src="img/reels/DZz3FDiJQnn.jpg" alt="рилс «эпохе old money пришёл конец»"><b>229 тыс.</b></a>
+        <a class="reel" href="https://www.instagram.com/reel/DbdVC09JApS/" target="_blank" rel="noopener"><img src="img/reels/DbdVC09JApS.jpg" alt="рилс про Эконику"><b>212 тыс.</b></a>
+        <a class="reel" href="https://www.instagram.com/reel/DbGSLmsJj-t/" target="_blank" rel="noopener"><img src="img/reels/DbGSLmsJj-t.jpg" alt="рилс про Skims"><b>170 тыс.</b></a>
+        <a class="reel" href="https://www.instagram.com/reel/DX0xsW6xqCM/" target="_blank" rel="noopener"><img src="img/reels/DX0xsW6xqCM.jpg" alt="рилс про бесплатное обучение от LVMH"><b>170 тыс.</b></a>
+        <a class="reel" href="https://www.instagram.com/reel/DfbpVIuOemS/" target="_blank" rel="noopener"><img src="img/reels/DfbpVIuOemS.jpg" alt="рилс «бренды объявили войну ИИ»"><b>151 тыс.</b></a>
+        <a class="reel" href="https://www.instagram.com/reel/DYjyB8rJkiy/" target="_blank" rel="noopener"><img src="img/reels/DYjyB8rJkiy.jpg" alt="рилс про Миронову"><b>123 тыс.</b></a>
+      </div>
+      <p class="src" style="margin-top:10px">просмотры на 21.11.2026 · @morgundze</p>
+    </div>
+  </section>
+
+  <!-- разбор: как я пишу рилс -->
+  <section class="step wrap" id="how">
+    <div class="col">
+      <div class="how-top">
+        <div class="step-head" style="margin-bottom:0">
+          <p class="mono">разбор · от идеи до сценария</p>
+          <h2>как я пишу <i>рилс</i></h2>
+          <p>мы определились с темой, с позицией и с формулой. а что дальше? покажу на примере моего рилса про Planta Rosa — того самого, который дошёл до Ибрагима Гациева.</p>
+        </div>
+        <aside>
+          <a href="https://www.instagram.com/reel/Df4Y2sBudpG/" target="_blank" rel="noopener"><img src="img/reels/state-venice.jpg" alt="рилс про Planta Rosa и State Venice"></a>
+          <b>100 000</b>
+          <p class="src">просмотров на 21.11.2026</p>
+        </aside>
+      </div>
+
+      <div class="phase">
+        <span class="n">1</span>
+        <div class="body">
+          <h3>выгружаю всё, что думаю</h3>
+          <p>сначала я просто выгружаю мысли: текстом, вслух, в запись — как угодно. что произошло и о чём я хочу рассказать. в этот раз меня спросили: «а про что тебе сейчас интересно говорить?» — и я начала рассказывать:</p>
+          <div class="voice">
+            <p>основатель Planta Rosa вышел из своего бренда год назад… и он пошёл и сделал свой бренд одежды, и у него прошёл показ. и это очень красивый показ. учитывая, что это русский бренд одежды, который он только недавно создал. и вообще учитывая, что сейчас все русские бренды закрываются…</p>
+            <p class="src">как я это проговорила, 16.11</p>
+          </div>
+          <p>и это важно: всё, что не моя тема, у меня не заходит. я снимала про Теслу — рилс набрал тысячу просмотров, и я его удалила. потому что мне самой было неинтересно про это говорить.</p>
+        </div>
+      </div>
+
+      <div class="phase">
+        <span class="n">2</span>
+        <div class="body">
+          <h3>ищу, что меня зацепило</h3>
+          <p>дальше я смотрю, что меня в этом зацепило. здесь — то, что пока российские бренды поголовно закрываются, он просто взял и сделал красивую коллекцию.</p>
+          <div class="voice">
+            <p>ничего не заявил — просто сделал крутую коллекцию. и она красивая, хочется рассматривать. это моё мнение.</p>
+            <p class="src">как я это проговорила, 16.11</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <span class="n">3</span>
+        <div class="body">
+          <h3>думаю, что может зацепить аудиторию</h3>
+          <p>и только потом я думаю, чем зацеплю людей. здесь их три:</p>
+          <ul class="hooks">
+            <li><span>заголовок — бывший владелец бренда, который знает вся Москва, создал ещё один хит</span></li>
+            <li><span>российские бренды — пока все закрываются, он показывает новую коллекцию</span></li>
+            <li><span>конец про успех — когда у тебя есть концепция, всё получится</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text" style="margin-top:12px">
+        <p class="mono">что получилось</p>
+        <div class="script-card">
+          <div class="lines">
+            <p>бывший владелец Planta Rosa, кажется, создал ещё один хит</p>
+            <p>пока российские бренды поголовно закрываются, он представил новый бренд и показал первую коллекцию</p>
+            <p>она вдохновлена Америкой 50–60-х годов: домохозяйки, скейтеры с Venice Beach — всё, что хочется рассматривать</p>
+            <p>казалось бы, не время рисковать, но аудитория осталась в восторге</p>
+            <p>а всё потому, что Ибрагим явно знает, что делает, и разбирается в маркетинге</p>
+            <p>у него для этого есть три вещи: концепция, продукт и подача</p>
+            <p>когда есть все эти три элемента — хоть в кризис, хоть в России, хоть в Африке — тебя везде будет ждать успех</p>
+          </div>
+          <p class="src">мой сценарий, 17.11.2026</p>
+        </div>
+        <p>а теперь посмотри, что в нём есть. те же элементы, что и в формуле:</p>
+        <ul class="pulled">
+          <li><span class="mono">заголовок</span><p>«бывший владелец Planta Rosa, кажется, создал ещё один хит»</p></li>
+          <li><span class="mono">доказательства</span><p>«пока российские бренды поголовно закрываются, он представил новый бренд»</p></li>
+          <li><span class="mono">оценка</span><p>«Ибрагим явно знает, что делает, и разбирается в маркетинге»</p></li>
+          <li class="hot"><span class="mono">позиция на максимум</span><p>«хоть в кризис, хоть в России, хоть в Африке — тебя везде будет ждать успех»</p></li>
+        </ul>
+
+        <div class="write">
+          <p class="mono">теперь ты</p>
+          <h3>выгрузи мысли <i>и собери свой рилс</i></h3>
+          <p class="hint">возьми тему, о которой тебе сейчас интересно говорить, и пройди те же три этапа.</p>
+          <div class="field wide"><label for="w1">1 · выгрузи всё, что думаешь</label><p class="what">что произошло, о чём хочешь рассказать — как сказала бы вслух</p><textarea id="w1" rows="3"></textarea></div>
+          <div class="field wide"><label for="w2">2 · что тебя в этом зацепило?</label><textarea id="w2" rows="2"></textarea></div>
+          <div class="field wide"><label for="w3">3 · чем ты зацепишь аудиторию?</label><p class="what">заголовок, контекст, мысль в конце</p><textarea id="w3" rows="2"></textarea></div>
+          <div class="field wide"><label for="w4">собери свой рилс</label><p class="what">заголовок → что произошло → что ты об этом думаешь → твоя позиция в конце. прочитай вслух: до 60 секунд</p><textarea id="w4" rows="4"></textarea></div>
+          <div class="row"><button class="btn" type="button" id="copy">скопировать рилс</button><span class="status" id="status" aria-live="polite"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- упражнение: убеждения -->
+  <section class="step wrap" id="beliefs">
+    <div class="col">
+      <div class="step-head">
+        <p class="mono">напоследок · упражнение</p>
+        <h2>откуда брать <i>убеждения</i></h2>
+      </div>
+      <div class="text">
+        <p>когда кажется, что потерялось вдохновение и непонятно, о чём говорить, я всегда советую одно: поштурмить свои темы через убеждения.</p>
+        <p>у всех нас есть свои позиции в той сфере, в которой мы вещаем. убеждения, которые отличаются от того, как принято или как люди привыкли. просто когда мы живём в своём пространстве, в своём куполе, нам кажется, что так у всех. на самом деле — не у всех.</p>
+        <div class="voice">
+          <p>у меня как у маркетолога есть свои убеждения по поводу маркетологов. я чётко уверена, что у маркетолога должно быть высшее образование, что таблички — это вообще не главное. или я знаю, что UGC-креаторы — это мыльный пузырь, абсолютно выдуманная профессия.</p>
+          <p class="src">из моего голосового клиентке после консультации</p>
+        </div>
+        <p>на протяжении пути эти убеждения появляются: какие-то мы вспоминаем, о каких-то забываем. поэтому их важно периодически себе напоминать и выписывать.</p>
+        <p>темы — это о чём ты говоришь. убеждения — что именно ты об этом думаешь. само знание можно взять где угодно, а твоё видение — только у тебя.</p>
+        <p>и важно: убеждения мы выкручиваем не обо всём подряд, а вокруг единого ядра личного бренда. говорим об одном, но с разных сторон и из разных сфер жизни.</p>
+        <div class="write">
+          <p class="mono">выпиши</p>
+          <h3>три главных убеждения <i>и выкрути их на максимум</i></h3>
+          <p class="hint">те, за которые ты готова топить до последнего: даже если тебе скажут «нет, это не так», ты знаешь, что это так, и готова заявить об этом всему миру. удобно идти по сферам — по одному убеждению на каждый вектор из шага 1.</p>
+          <div class="ex">
+            <p class="mono">пример — как это у меня</p>
+            <div class="r"><p>тема</p><p>маркетологи</p></div>
+            <div class="r"><p>как сказала бы подруге</p><p>у маркетолога должно быть высшее образование</p></div>
+            <div class="r max"><p>на максимум</p><p>я искренне не понимаю, как маркетологи без высшего образования могут что-то говорить о маркетинге</p></div>
+          </div>
+          <div class="belief">
+            <p class="bn">1</p>
+            <div class="bfields">
+              <label class="mini" for="b1t">тема</label><textarea id="b1t" rows="1" placeholder="тема"></textarea>
+              <label class="mini" for="b1s">как сказала бы подруге</label><textarea id="b1s" rows="1"></textarea>
+              <label class="mini" for="b1m">выкрути на максимум</label><textarea id="b1m" rows="1"></textarea>
+              <div class="bchecks"><label><input type="checkbox" id="b1a"> на спор</label><label><input type="checkbox" id="b1b"> на отказ</label></div>
+            </div>
+          </div>
+          <div class="belief">
+            <p class="bn">2</p>
+            <div class="bfields">
+              <label class="mini" for="b2t">тема</label><textarea id="b2t" rows="1" placeholder="тема"></textarea>
+              <label class="mini" for="b2s">как сказала бы подруге</label><textarea id="b2s" rows="1"></textarea>
+              <label class="mini" for="b2m">выкрути на максимум</label><textarea id="b2m" rows="1"></textarea>
+              <div class="bchecks"><label><input type="checkbox" id="b2a"> на спор</label><label><input type="checkbox" id="b2b"> на отказ</label></div>
+            </div>
+          </div>
+          <div class="belief">
+            <p class="bn">3</p>
+            <div class="bfields">
+              <label class="mini" for="b3t">тема</label><textarea id="b3t" rows="1" placeholder="тема"></textarea>
+              <label class="mini" for="b3s">как сказала бы подруге</label><textarea id="b3s" rows="1"></textarea>
+              <label class="mini" for="b3m">выкрути на максимум</label><textarea id="b3m" rows="1"></textarea>
+              <div class="bchecks"><label><input type="checkbox" id="b3a"> на спор</label><label><input type="checkbox" id="b3b"> на отказ</label></div>
+            </div>
+          </div>
+          <p class="hint">проверь каждое. на спор: с этим можно осмысленно не согласиться? если спорить не с чем — не подходит. на отказ: от чего ты отказываешься из-за этого убеждения? если отказа нет — это не убеждение, а красивая фраза.</p>
+          <p class="hint">подсказка: спроси близких «чем я тебя зацепила?» — их ответы почти всегда и есть то, за что тебя запоминают.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- финал -->
+  <section class="final wrap">
+    <div class="col text" style="gap:1.2em">
+      <p class="mono">что дальше</p>
+      <h2>остался месяц <i>до конца года</i></h2>
+      <p>и ты уже можешь заложить очень крутую базу: построить свой личный бренд и начать его проявлять в 2027 году.</p>
+      <p>более того, у нас есть первая неделя января. она считается золотой неделей контента. не потому, что все рилсы получают огромное количество просмотров, а потому, что много людей будет листать рилсы. и мы можем стать одними из тех, кто в эту неделю заберёт на себя весь прайм-тайм.</p>
+      <div class="week">
+        <div><b>все дома</b><span>новогодние каникулы: у людей есть время листать ленту и подписываться на новых людей</span></div>
+        <div><b>многие на паузе</b><span>блогеры уходят отдыхать. тем, кто выходит с контентом, достаётся больше внимания</span></div>
+        <div><b>новый год — новые подписки</b><span>в январе люди ищут, на кого равняться и у кого учиться</span></div>
+      </div>
+      <p>поэтому я решила собрать свой практикум, где расскажу, как сделать всё это тебе.</p>
+    </div>
+  </section>
+
+  <section class="prac wrap">
+    <div class="col prac-grid">
+      <div class="text" style="gap:12px">
+        <p class="mono">практикум · 25–26 декабря · 11:00 мск · онлайн</p>
+        <h2>личный бренд <i>и reels</i></h2>
+        <p>два дня, чтобы найти свои смыслы и собрать личный бренд на 2027 год. отличная подготовка к первой неделе января.</p>
+      </div>
+      <div class="pdays">
+        <div class="pday"><p class="mono">день 1 · 25 декабря</p><h3>распаковка смыслов и поиск тем</h3><ul><li>ai-распаковщик — проходим мой метод распаковки</li><li>ядро личного бренда: о чём ты на самом деле</li><li>зоны уникальности: что ты делаешь «слишком»</li><li>убеждения на максимум</li><li>3–4 направления блога и темы на январь</li></ul></div>
+        <div class="pday"><p class="mono">день 2 · 26 декабря</p><h3>структура рилсов</h3><ul><li>начало, середина, конец — что решают первые 3 секунды</li><li>широкий заход: 7 типов заголовков</li><li>сценарий за 5 шагов</li><li>без шаблонов «100 хуков» — твоя структура под твои темы</li></ul></div>
+      </div>
+      <div class="ai">
+        <p class="mono">бонус · ai-распаковщик</p>
+        <p>я знаю, как сложно находить темы и смыслы для своего блога. поэтому придумала, как закрыть эту задачу: вместе с практикумом ты получаешь мой ai-распаковщик. он мыслит так, как мыслю я.</p>
+        <div class="ai-nums">
+          <div><b>6 лет</b><span>моего опыта в маркетинге</span></div>
+          <div><b>67 часов</b><span>моих лекций, разборов и консультаций в Zoom</span></div>
+          <div><b>369</b><span>моих разборов блогов и сценариев учениц</span></div>
+          <div><b>275</b><span>моих рилсов</span></div>
+        </div>
+      </div>
+      <div class="cta">
+        <a class="btn" href="https://t.me/morgundze_marketing_bot?start=site" target="_blank" rel="noopener">участвовать · 1 000 ₽</a>
+        <a class="link" href="https://morgundze.github.io/praktikum/" target="_blank" rel="noopener">вся программа на сайте практикума</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="wrap"><div class="col"><p>Надежда Моргун · @morgundze · канал N. Morgun — t.me/lifemorgun</p></div></footer>
+<script id="page-js">
+(function () {
+  var KEY = 'nm-blog-vectors-v1';
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { state = {}; }
+  function grow(el) { el.style.height = 'auto'; el.style.height = el.scrollHeight + 'px'; }
+  ['v1', 'v2', 'v3', 'w1', 'w2', 'w3', 'w4', 'b1t', 'b1s', 'b1m', 'b2t', 'b2s', 'b2m', 'b3t', 'b3s', 'b3m'].forEach(function (k) {
+    var el = document.getElementById(k);
+    el.value = state[k] || ''; grow(el);
+    el.addEventListener('input', function () {
+      state[k] = el.value; grow(el);
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+    });
+  });
+  [1, 2, 3].forEach(function (i) {
+    ['a', 'b'].forEach(function (s) {
+      var k = 'b' + i + s, el = document.getElementById(k);
+      if (!el) return;
+      el.checked = !!state[k];
+      el.addEventListener('change', function () { state[k] = el.checked; try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} });
+    });
+  });
+  function syncTopics() {
+    [1, 2, 3].forEach(function (i) {
+      var t = document.getElementById('b' + i + 't'), v = (state['v' + i] || '').trim();
+      if (t) t.placeholder = v || 'тема';
+    });
+  }
+  syncTopics();
+  ['v1', 'v2', 'v3'].forEach(function (k) { document.getElementById(k).addEventListener('input', syncTopics); });
+  var copy = document.getElementById('copy'), status = document.getElementById('status');
+  copy.addEventListener('click', function () {
+    var el = document.getElementById('w4'), txt = (el.value || '').trim();
+    if (!txt) { status.textContent = 'сначала собери рилс в последнем поле'; return; }
+    function fallback() { el.focus(); el.select(); status.textContent = 'текст выделен — нажми «копировать»'; }
+    try { navigator.clipboard.writeText(txt).then(function () { status.textContent = 'скопировано — сохрани в заметки'; }, fallback); } catch (e) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
