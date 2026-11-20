@@ -197,7 +197,7 @@ h1, h2, h3 { text-wrap: balance; }
 .wall { columns: 3 260px; column-gap: clamp(14px, 2vw, 24px); }
 .wall .q { break-inside: avoid; margin: 0 0 clamp(14px, 2vw, 24px); padding: 22px 22px 20px; display: grid; gap: 14px; background: var(--ivory); border: 1px solid var(--line); }
 .wall .scr { break-inside: avoid; margin: 0 0 clamp(14px, 2vw, 24px); display: grid; gap: 10px; }
-.wall .scr img { width: 100%; height: auto; border-radius: 16px; box-shadow: 0 14px 34px -22px rgba(0,0,0,.45); }
+.wall .scr img { width: 100%; height: auto; filter: drop-shadow(0 10px 22px rgba(0,0,0,.12)); }
 .wall .q::before { content: "«"; font: italic 400 46px/.6 var(--ital); color: var(--acc); }
 .wall blockquote { margin: 0; font: 400 17px/1.5 var(--serif); }
 .wall .who { font: 500 11px/1.4 var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--soft); }
@@ -330,23 +330,12 @@ footer a:hover { color: var(--acc); }
   </div>
 </section>
 
-<section class="unpack" id="unpacker">
+<section class="formula" aria-labelledby="f-h">
   <div class="wrap sec">
-    <div>
-      <span class="gift">входит в практикум</span>
-      <h2>ai-распаковщик</h2>
-      <p class="lead">Вместе с доступом к практикуму ты получаешь мой AI-распаковщик.</p>
-      <p class="sub">Это мой метод распаковки, который ты проходишь вместе с нейросетью. Он не выдаёт готовые идеи и сценарии. Он задаёт вопросы, пока ты сама не скажешь: «о, точно, это же то, о чём я всю жизнь хотела говорить».</p>
-      <ul class="outs">
-        <li>смыслы и убеждения, которые мы выкручиваем на максимум</li>
-        <li>твой маркетинг-архетип</li>
-        <li>сильные стороны, которые стоит раскрывать в блоге</li>
-        <li>3–4 направления, в которые ты топишь</li>
-      </ul>
-      <p class="lbl">девять архетипов</p>
-      <ul class="chips"><li>ролевая модель</li><li>лучшая подруга</li><li>bad bitch</li><li>проводник</li><li>girlboss</li><li>lover girl</li><li>эксперт</li><li>икона</li><li>творческая личность</li></ul>
-    </div>
-    <figure class="poster"><img src="img/make-art.jpg" alt="Надпись на синем фоне: goal: make art, be hot."></figure>
+    <p class="lbl">как я пишу рилсы</p>
+    <h2 class="h2" id="f-h">формула <em>рилса</em></h2>
+    <ol class="eq"><li>заголовок</li><li>контекст</li><li>примеры</li><li>вывод</li></ol>
+    <p class="fsub">На практикуме я расскажу, как пишу рилсы, и покажу свою формулу.</p>
   </div>
 </section>
 
@@ -383,12 +372,23 @@ footer a:hover { color: var(--acc); }
   </div>
 </section>
 
-<section class="formula" aria-labelledby="f-h">
+<section class="unpack" id="unpacker">
   <div class="wrap sec">
-    <p class="lbl">как я пишу рилсы</p>
-    <h2 class="h2" id="f-h">формула <em>рилса</em></h2>
-    <ol class="eq"><li>заголовок</li><li>контекст</li><li>примеры</li><li>вывод</li></ol>
-    <p class="fsub">На практикуме я расскажу, как пишу рилсы, и покажу свою формулу.</p>
+    <div>
+      <span class="gift">входит в практикум</span>
+      <h2>ai-распаковщик</h2>
+      <p class="lead">Вместе с доступом к практикуму ты получаешь мой AI-распаковщик.</p>
+      <p class="sub">Это мой метод распаковки, который ты проходишь вместе с нейросетью. Он не выдаёт готовые идеи и сценарии. Он задаёт вопросы, пока ты сама не скажешь: «о, точно, это же то, о чём я всю жизнь хотела говорить».</p>
+      <ul class="outs">
+        <li>смыслы и убеждения, которые мы выкручиваем на максимум</li>
+        <li>твой маркетинг-архетип</li>
+        <li>сильные стороны, которые стоит раскрывать в блоге</li>
+        <li>3–4 направления, в которые ты топишь</li>
+      </ul>
+      <p class="lbl">девять архетипов</p>
+      <ul class="chips"><li>ролевая модель</li><li>лучшая подруга</li><li>bad bitch</li><li>проводник</li><li>girlboss</li><li>lover girl</li><li>эксперт</li><li>икона</li><li>творческая личность</li></ul>
+    </div>
+    <figure class="poster"><img src="img/make-art.jpg" alt="Надпись на синем фоне: goal: make art, be hot."></figure>
   </div>
 </section>
 
@@ -418,12 +418,12 @@ footer a:hover { color: var(--acc); }
       <h2 class="h2">отзывы <em>про рилсы</em></h2>
     </div>
     <div class="wall">
-      <figure class="scr"><img src="img/reviews/natalia.jpg" alt="Отзыв Наталии в чате мастерской: теперь нет вопросов, где брать идеи, как упаковывать свои мысли, как смотреть на статистику" loading="lazy"><figcaption class="who">Наталия · мастерская, октябрь 2026</figcaption></figure>
-      <figure class="scr"><img src="img/reviews/anna.jpg" alt="Отзыв Анны: писать сценарии, оказывается, можно не пыхтя над ними месяцами" loading="lazy"><figcaption class="who">Анна · мастерская, октябрь 2026</figcaption></figure>
-      <figure class="scr"><img src="img/reviews/diana.jpg" alt="Отзыв Дианы: было очень интересно, структурно и действительно полезно" loading="lazy"><figcaption class="who">Диана · практикум, сентябрь 2026</figcaption></figure>
-      <figure class="scr"><img src="img/reviews/anna-melikhova.jpg" alt="Отзыв Анны Мелиховой: этот продукт помог мне начать наконец-то вести инсту спустя 2 года" loading="lazy"><figcaption class="who">Анна · мастерская, октябрь 2026</figcaption></figure>
-      <figure class="scr"><img src="img/reviews/darya.jpg" alt="Отзыв Дарьи: этот чатик теперь у меня как настольная книга" loading="lazy"><figcaption class="who">Дарья · мастерская, октябрь 2026</figcaption></figure>
-      <figure class="q"><blockquote>Благодаря интенсиву начала снимать рилс, 3 года собиралась, наконец-то пазл сложился</blockquote><figcaption class="who">Анка · практикум, июль 2026</figcaption></figure>
+      <figure class="scr"><img src="img/reviews/natalia.webp" alt="Отзыв Наталии: теперь нет вопросов, где брать идеи, как упаковывать свои мысли" loading="lazy"><figcaption class="who">Наталия · мастерская, октябрь 2026</figcaption></figure>
+      <figure class="scr"><img src="img/reviews/daria.webp" alt="Отзыв Дарьи: я начала снимать рилс спустя 2 года" loading="lazy"><figcaption class="who">Дарья · мастерская, октябрь 2026</figcaption></figure>
+      <figure class="scr"><img src="img/reviews/anna.webp" alt="Отзыв Анны: писать сценарии, оказывается, можно не пыхтя над ними месяцами" loading="lazy"><figcaption class="who">Анна · мастерская, октябрь 2026</figcaption></figure>
+      <figure class="scr"><img src="img/reviews/anna-melikhova.webp" alt="Отзыв Анны Мелиховой: продукт помог мне начать наконец-то вести инсту спустя 2 года" loading="lazy"><figcaption class="who">Анна · мастерская, октябрь 2026</figcaption></figure>
+      <figure class="scr"><img src="img/reviews/diana.webp" alt="Отзыв Дианы: структурно и действительно полезно" loading="lazy"><figcaption class="who">Диана · практикум, сентябрь 2026</figcaption></figure>
+      <figure class="scr"><img src="img/reviews/darya.webp" alt="Отзыв Дарьи: этот чатик теперь у меня как настольная книга" loading="lazy"><figcaption class="who">Дарья · мастерская, октябрь 2026</figcaption></figure>
     </div>
   </div>
 </section>
