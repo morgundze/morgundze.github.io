@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Блог и личный бренд — практикум Надежды Моргун</title>
-<meta name="description" content="Практикум 25–26 декабря, онлайн. Два дня, чтобы найти свои смыслы и собрать рилсы на 2027 год. 1 000 ₽.">
+<title>Личный бренд и reels — практикум Надежды Моргун</title>
+<meta name="description" content="Практикум 25–26 декабря, 11:00 мск, онлайн. Два дня, чтобы найти свои смыслы и собрать личный бренд на 2027 год. 1 000 ₽.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Блог и личный бренд — практикум 25–26 декабря">
-<meta property="og:description" content="Два дня, чтобы найти свои смыслы и собрать рилсы на 2027 год. Онлайн, 1 000 ₽.">
+<meta property="og:title" content="Личный бренд и reels — практикум 25–26 декабря">
+<meta property="og:description" content="Два дня, чтобы найти свои смыслы и собрать личный бренд на 2027 год. Онлайн, 1 000 ₽.">
 <meta property="og:url" content="https://morgundze.github.io/praktikum/">
 <meta property="og:image" content="https://morgundze.github.io/praktikum/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -65,9 +65,9 @@ h1, h2, h3 { text-wrap: balance; }
 
 /* hero */
 .hero .wrap { padding-block: clamp(28px, 5vw, 56px) clamp(48px, 7vw, 96px); display: grid; justify-items: center; }
-.kicker { margin: 0 0 14px; font: 500 11px/1.4 var(--ui); letter-spacing: .22em; text-transform: uppercase; color: var(--soft); text-align: center; }
+.kicker { margin: 0 0 clamp(18px, 2.4vw, 30px); font: 500 11px/1.4 var(--ui); letter-spacing: .22em; text-transform: uppercase; color: var(--soft); text-align: center; }
 .big { margin: 0; font: 400 clamp(54px, 11.5vw, 176px)/.84 var(--display); text-transform: uppercase; text-align: center; letter-spacing: -.01em; }
-.spread { position: relative; width: min(1040px, 100%); margin-top: clamp(-34px, -2.6vw, -12px); display: grid; grid-template-columns: 1fr minmax(0, 420px) 1fr; align-items: start; }
+.spread { position: relative; width: min(1040px, 100%); margin-top: clamp(-14px, -1vw, -6px); display: grid; grid-template-columns: 1fr minmax(0, 420px) 1fr; align-items: start; }
 .spread .main { grid-column: 2; grid-row: 1; position: relative; z-index: 2; margin: 0; }
 .spread .main img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; filter: grayscale(1) contrast(1.05); }
 .spread .side { grid-column: 1; grid-row: 1; justify-self: end; margin: 110px -46px 0 0; width: min(220px, 100%); z-index: 3; position: relative; }
@@ -196,6 +196,8 @@ h1, h2, h3 { text-wrap: balance; }
 .rev { background: var(--paper); border-top: 1px solid var(--line); }
 .wall { columns: 3 260px; column-gap: clamp(14px, 2vw, 24px); }
 .wall .q { break-inside: avoid; margin: 0 0 clamp(14px, 2vw, 24px); padding: 22px 22px 20px; display: grid; gap: 14px; background: var(--ivory); border: 1px solid var(--line); }
+.wall .scr { break-inside: avoid; margin: 0 0 clamp(14px, 2vw, 24px); display: grid; gap: 10px; }
+.wall .scr img { width: 100%; height: auto; border-radius: 16px; box-shadow: 0 14px 34px -22px rgba(0,0,0,.45); }
 .wall .q::before { content: "«"; font: italic 400 46px/.6 var(--ital); color: var(--acc); }
 .wall blockquote { margin: 0; font: 400 17px/1.5 var(--serif); }
 .wall .who { font: 500 11px/1.4 var(--ui); letter-spacing: .14em; text-transform: uppercase; color: var(--soft); }
@@ -256,13 +258,13 @@ footer a:hover { color: var(--acc); }
 
 <section class="hero">
   <div class="wrap">
-    <p class="kicker">практикум · 25–26 декабря · онлайн</p>
-    <h1 class="big">блог <em>и</em><br>личный бренд</h1>
+    <p class="kicker">практикум · 25–26 декабря · 11:00 мск · онлайн</p>
+    <h1 class="big">личный бренд<br><em>и</em> reels</h1>
     <div class="spread">
       <figure class="main"><img src="img/nadezhda.jpg" alt="Надежда Моргун"></figure>
       <figure class="side"><img src="img/me-cafe.jpg" alt="Надежда в кафе"></figure>
       <div class="card">
-        <p>Два дня, чтобы найти свои смыслы и собрать рилсы на 2027 год.</p>
+        <p>Два дня, чтобы найти свои смыслы и собрать личный бренд на 2027 год.</p>
         <small>первая неделя января — золотая неделя контента</small>
         <div class="row"><a class="pill" href="#buy">участвовать · 1 000 ₽</a><a class="pill ghost" href="#program">программа</a></div>
       </div>
@@ -305,12 +307,46 @@ footer a:hover { color: var(--acc); }
   </div>
 </section>
 
-<section class="formula" aria-labelledby="f-h">
+<section class="prog" id="program">
   <div class="wrap sec">
-    <p class="lbl">как я пишу рилсы</p>
-    <h2 class="h2" id="f-h">формула <em>рилса</em></h2>
-    <ol class="eq"><li>заголовок</li><li>контекст</li><li>примеры</li><li>вывод</li></ol>
-    <p class="fsub">На практикуме я расскажу, как пишу рилсы, и покажу свою формулу.</p>
+    <div class="head"><h2 class="h2">программа</h2><span>два эфира · запись · общий чат · ai-распаковщик</span></div>
+    <article class="day">
+      <span class="d">день 1 · пятница, 25 декабря, 11:00 мск</span>
+      <h3>распаковка смыслов и поиск тем</h3>
+      <ul><li class="key"><b>ai-распаковщик</b> — проходим мой метод распаковки</li><li>ядро личного бренда: о чём ты на самом деле</li><li>зоны уникальности: что ты делаешь «слишком»</li><li>убеждения на максимум</li><li>3–4 направления блога и темы на январь</li></ul>
+    </article>
+    <article class="day">
+      <span class="d">день 2 · суббота, 26 декабря, 11:00 мск</span>
+      <h3>структура рилсов</h3>
+      <ul><li>начало, середина, конец — что решают первые 3 секунды</li><li>широкий заход: 7 типов заголовков</li><li>сценарий за 5 шагов</li><li>без шаблонов «100 хуков» — твоя структура под твои темы</li></ul>
+    </article>
+    <figure><img src="img/me-loft-full.jpg" alt="Надежда в лофте"></figure>
+    <div class="fmt">
+      <div><b>2 эфира</b><span>25 и 26 декабря в 11:00 по мск, в Zoom</span></div>
+      <div><b>запись</b><span>не успеешь вживую — посмотришь потом</span></div>
+      <div><b>чат</b><span>общий чат с ответами на вопросы</span></div>
+      <div><b>распаковщик</b><span>доступ вместе с практикумом</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="unpack" id="unpacker">
+  <div class="wrap sec">
+    <div>
+      <span class="gift">входит в практикум</span>
+      <h2>ai-распаковщик</h2>
+      <p class="lead">Вместе с доступом к практикуму ты получаешь мой AI-распаковщик.</p>
+      <p class="sub">Это мой метод распаковки, который ты проходишь вместе с нейросетью. Он не выдаёт готовые идеи и сценарии. Он задаёт вопросы, пока ты сама не скажешь: «о, точно, это же то, о чём я всю жизнь хотела говорить».</p>
+      <ul class="outs">
+        <li>смыслы и убеждения, которые мы выкручиваем на максимум</li>
+        <li>твой маркетинг-архетип</li>
+        <li>сильные стороны, которые стоит раскрывать в блоге</li>
+        <li>3–4 направления, в которые ты топишь</li>
+      </ul>
+      <p class="lbl">девять архетипов</p>
+      <ul class="chips"><li>ролевая модель</li><li>лучшая подруга</li><li>bad bitch</li><li>проводник</li><li>girlboss</li><li>lover girl</li><li>эксперт</li><li>икона</li><li>творческая личность</li></ul>
+    </div>
+    <figure class="poster"><img src="img/make-art.jpg" alt="Надпись на синем фоне: goal: make art, be hot."></figure>
   </div>
 </section>
 
@@ -347,46 +383,12 @@ footer a:hover { color: var(--acc); }
   </div>
 </section>
 
-<section class="prog" id="program">
+<section class="formula" aria-labelledby="f-h">
   <div class="wrap sec">
-    <div class="head"><h2 class="h2">программа</h2><span>два эфира · запись · общий чат · ai-распаковщик</span></div>
-    <article class="day">
-      <span class="d">день 1 · пятница, 25 декабря</span>
-      <h3>распаковка смыслов и поиск тем</h3>
-      <ul><li class="key"><b>ai-распаковщик</b> — проходим мой метод распаковки</li><li>ядро личного бренда: о чём ты на самом деле</li><li>зоны уникальности: что ты делаешь «слишком»</li><li>убеждения на максимум</li><li>3–4 направления блога и темы на январь</li></ul>
-    </article>
-    <article class="day">
-      <span class="d">день 2 · суббота, 26 декабря</span>
-      <h3>структура рилсов</h3>
-      <ul><li>начало, середина, конец — что решают первые 3 секунды</li><li>широкий заход: 7 типов заголовков</li><li>сценарий за 5 шагов</li><li>без шаблонов «100 хуков» — твоя структура под твои темы</li></ul>
-    </article>
-    <figure><img src="img/me-loft-full.jpg" alt="Надежда в лофте"></figure>
-    <div class="fmt">
-      <div><b>2 эфира</b><span>25 и 26 декабря в Zoom</span></div>
-      <div><b>запись</b><span>не успеешь вживую — посмотришь потом</span></div>
-      <div><b>чат</b><span>общий чат с ответами на вопросы</span></div>
-      <div><b>распаковщик</b><span>доступ вместе с практикумом</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="unpack" id="unpacker">
-  <div class="wrap sec">
-    <div>
-      <span class="gift">входит в практикум</span>
-      <h2>ai-распаковщик</h2>
-      <p class="lead">Вместе с доступом к практикуму ты получаешь мой AI-распаковщик.</p>
-      <p class="sub">Это мой метод распаковки, который ты проходишь вместе с нейросетью. Он не выдаёт готовые идеи и сценарии. Он задаёт вопросы, пока ты сама не скажешь: «о, точно, это же то, о чём я всю жизнь хотела говорить».</p>
-      <ul class="outs">
-        <li>смыслы и убеждения, которые мы выкручиваем на максимум</li>
-        <li>твой маркетинг-архетип</li>
-        <li>сильные стороны, которые стоит раскрывать в блоге</li>
-        <li>3–4 направления, в которые ты топишь</li>
-      </ul>
-      <p class="lbl">девять архетипов</p>
-      <ul class="chips"><li>ролевая модель</li><li>лучшая подруга</li><li>bad bitch</li><li>проводник</li><li>girlboss</li><li>lover girl</li><li>эксперт</li><li>икона</li><li>творческая личность</li></ul>
-    </div>
-    <figure class="poster"><img src="img/make-art.jpg" alt="Надпись на синем фоне: goal: make art, be hot."></figure>
+    <p class="lbl">как я пишу рилсы</p>
+    <h2 class="h2" id="f-h">формула <em>рилса</em></h2>
+    <ol class="eq"><li>заголовок</li><li>контекст</li><li>примеры</li><li>вывод</li></ol>
+    <p class="fsub">На практикуме я расскажу, как пишу рилсы, и покажу свою формулу.</p>
   </div>
 </section>
 
@@ -416,12 +418,12 @@ footer a:hover { color: var(--acc); }
       <h2 class="h2">отзывы <em>про рилсы</em></h2>
     </div>
     <div class="wall">
-      <figure class="q"><blockquote>Теперь нет вопросов, где брать идеи, как упаковывать свои мысли, как смотреть на статистику</blockquote><figcaption class="who">Наталия · мастерская, октябрь 2026</figcaption></figure>
+      <figure class="scr"><img src="img/reviews/natalia.jpg" alt="Отзыв Наталии в чате мастерской: теперь нет вопросов, где брать идеи, как упаковывать свои мысли, как смотреть на статистику" loading="lazy"><figcaption class="who">Наталия · мастерская, октябрь 2026</figcaption></figure>
+      <figure class="scr"><img src="img/reviews/anna.jpg" alt="Отзыв Анны: писать сценарии, оказывается, можно не пыхтя над ними месяцами" loading="lazy"><figcaption class="who">Анна · мастерская, октябрь 2026</figcaption></figure>
+      <figure class="scr"><img src="img/reviews/diana.jpg" alt="Отзыв Дианы: было очень интересно, структурно и действительно полезно" loading="lazy"><figcaption class="who">Диана · практикум, сентябрь 2026</figcaption></figure>
+      <figure class="scr"><img src="img/reviews/anna-melikhova.jpg" alt="Отзыв Анны Мелиховой: этот продукт помог мне начать наконец-то вести инсту спустя 2 года" loading="lazy"><figcaption class="who">Анна · мастерская, октябрь 2026</figcaption></figure>
+      <figure class="scr"><img src="img/reviews/darya.jpg" alt="Отзыв Дарьи: этот чатик теперь у меня как настольная книга" loading="lazy"><figcaption class="who">Дарья · мастерская, октябрь 2026</figcaption></figure>
       <figure class="q"><blockquote>Благодаря интенсиву начала снимать рилс, 3 года собиралась, наконец-то пазл сложился</blockquote><figcaption class="who">Анка · практикум, июль 2026</figcaption></figure>
-      <figure class="q"><blockquote>Писать сценарии, оказывается, можно не пыхтя над ними месяцами</blockquote><figcaption class="who">Анна · мастерская, октябрь 2026</figcaption></figure>
-      <figure class="q"><blockquote>Было очень интересно, структурно и действительно полезно. Вы подсветили некоторые вещи с нового ракурса и дали свежий взгляд на тему</blockquote><figcaption class="who">Диана · практикум, сентябрь 2026</figcaption></figure>
-      <figure class="q"><blockquote>Этот продукт помог мне начать наконец-то вести инсту спустя 2 года!!</blockquote><figcaption class="who">Анна · мастерская, октябрь 2026</figcaption></figure>
-      <figure class="q"><blockquote>Этот чатик теперь у меня как настольная книга, куда я прихожу за вашим мышлением, за коррекцией сценариев и за вдохновением</blockquote><figcaption class="who">Дарья · мастерская, октябрь 2026</figcaption></figure>
     </div>
   </div>
 </section>
@@ -441,7 +443,7 @@ footer a:hover { color: var(--acc); }
       <a class="pill ghost" href="https://t.me/morgundze_marketing_bot?start=foreign" target="_blank" rel="noopener">оплата иностранной картой</a>
     </div>
     <p class="legal">Оплата проходит в Telegram-боте: картой российского банка, через СБП или иностранной картой. После оплаты бот сразу пришлёт вход в закрытый канал практикума.<br>Нажимая «участвовать», ты принимаешь условия <a href="oferta.html">публичной оферты</a> и&nbsp;<a href="privacy.html">политики конфиденциальности</a>.</p>
-    <span class="meta">25–26 декабря · онлайн · Надежда Моргун</span>
+    <span class="meta">25–26 декабря · 11:00 мск · онлайн · Надежда Моргун</span>
   </div>
 </section>
 
@@ -468,8 +470,8 @@ footer a:hover { color: var(--acc); }
   });
   g.innerHTML = html;
 
-  // старт 25.12.2026 12:00 МСК (09:00 UTC) — время уточнить
-  var start = Date.UTC(2026, 11, 25, 9, 0, 0);
+  // старт 25.12.2026 11:00 МСК (08:00 UTC) — время подтвердила Надежда 20.11
+  var start = Date.UTC(2026, 11, 25, 8, 0, 0);
   function pad(n) { return (n < 10 ? '0' : '') + n; }
   function tick() {
     var left = Math.max(0, start - Date.now());
