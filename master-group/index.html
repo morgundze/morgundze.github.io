@@ -109,15 +109,15 @@ footer p { margin: 0; }
       <span class="box" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2 7.5l3.2 3L12 3.5" fill="none" stroke="#F3EEE7" stroke-width="2"/></svg></span>
       <span>Я даю <a href="soglasie.html" target="_blank">согласие</a> на обработку моих персональных данных в соответствии с <a href="privacy.html" target="_blank">Политикой</a> обработки персональных данных</span>
     </label>
-    <label class="chk">
+    <label class="chk" data-req>
       <input type="checkbox" id="c-otzyv">
       <span class="box" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2 7.5l3.2 3L12 3.5" fill="none" stroke="#F3EEE7" stroke-width="2"/></svg></span>
-      <span>Я даю <a href="otzyv.html" target="_blank">согласие</a> на публикацию отзыва в соответствии с <a href="privacy.html" target="_blank">политикой</a> обработки персональных данных <span class="opt">· по желанию</span></span>
+      <span>Я даю <a href="otzyv.html" target="_blank">согласие</a> на публикацию отзыва в соответствии с <a href="privacy.html" target="_blank">политикой</a> обработки персональных данных</span>
     </label>
   </fieldset>
 
   <a class="pay" id="pay" href="#" role="button" aria-disabled="true">Оплатить</a>
-  <p class="hint" id="hint" aria-live="polite">отметь согласие с офертой и на обработку данных — кнопка станет активной</p>
+  <p class="hint" id="hint" aria-live="polite">отметь все галочки — кнопка станет активной</p>
 
   <div class="after">
     <p>После оплаты напиши мне в Telegram <a href="https://t.me/morgundzehelp" target="_blank">@morgundzehelp</a> — пришлю ссылку в чат мастер-группы.</p>
@@ -159,7 +159,7 @@ footer p { margin: 0; }
       e.preventDefault();
       m.forEach(function (l) { l.classList.add("miss"); });
       hint.classList.add("warn");
-      hint.textContent = "чтобы перейти к оплате, отметь согласие с офертой и на обработку данных";
+      hint.textContent = "чтобы перейти к оплате, отметь все галочки";
       m[0].scrollIntoView({ behavior: "smooth", block: "center" });
     }
   });
