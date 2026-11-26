@@ -36,3 +36,16 @@ footer .in { padding-block: 24px 40px; font: 400 12px/1.6 'PT Mono', monospace; 
 footer nav { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-bottom: 10px; }
 footer p { margin: 0; }
 @media (max-width: 600px) { dl { grid-template-columns: 1fr; gap: 2px; } dd { margin-bottom: 10px; } }
+/* печать в PDF: белая бумага, компактный шрифт, без ссылки «к оплате» */
+@page { size: A4; margin: 16mm 15mm; }
+@media print {
+  body { background: #fff; font-size: 10.5pt; line-height: 1.5; }
+  .top .in, main, footer .in { max-width: none; padding-left: 0; padding-right: 0; }
+  .top .in { padding-block: 0 8px; }
+  .top .back { display: none; }
+  main { padding-block: 18px 10px; }
+  h1 { font-size: 30pt; }
+  h2 { margin-top: 22px; break-after: avoid; }
+  h3 { break-after: avoid; }
+  .box { break-inside: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
