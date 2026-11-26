@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Мастер-группа — оплата</title>
+<meta name="description" content="Мастер-группа по личному бренду и блогу Надежды Моргун. 30 ноября — 24 декабря 2026, онлайн. 88 000 ₽.">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Мастер-группа по личному бренду и блогу — оплата">
+<meta property="og:description" content="30 ноября — 24 декабря 2026, онлайн. Надежда Моргун.">
+<meta property="og:url" content="https://morgundze.github.io/master-group/">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+/* страница оплаты мастер-группы: бумага, шрифты и синий — как на сайте практикума */
+:root {
+  --ivory: #F3EEE7;
+  --paper: #FBF9F5;
+  --ink: #15120F;
+  --soft: #5E574F;
+  --line: rgba(21, 18, 15, 0.16);
+  --line-2: rgba(21, 18, 15, 0.34);
+  --acc: #2B14C8;
+  --off: #C9C2B8;
+  --warn: #B3261E;
+  --display: 'Oranienbaum', 'Didot', 'Bodoni 72', Georgia, serif;
+  --serif: 'PT Serif', Georgia, serif;
+  --mono: 'PT Mono', 'Courier New', monospace;
+  --ui: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --gut: 16px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--ivory); color: var(--ink); font: 400 16px/1.55 var(--serif); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-underline-offset: 3px; }
+.in { max-width: 600px; margin-inline: auto; padding-left: max(var(--gut), env(safe-area-inset-left, 0px)); padding-right: max(var(--gut), env(safe-area-inset-right, 0px)); }
+.top { border-bottom: 1px solid var(--line); }
+.top .in { padding-block: 18px; }
+.top .name { font: 400 20px/1 var(--display); text-transform: uppercase; text-decoration: none; }
+main .in { padding-block: 40px 48px; }
+.lbl { margin: 0 0 14px; font: 600 11px/1.4 var(--ui); letter-spacing: .16em; text-transform: uppercase; color: var(--acc); }
+h1 { margin: 0; font: 400 clamp(54px, 15vw, 84px)/.9 var(--display); text-transform: uppercase; letter-spacing: -.01em; }
+.sub { margin: 8px 0 0; font: italic 400 clamp(20px, 5.4vw, 26px)/1.25 var(--serif); }
+.meta { margin: 14px 0 0; font: 400 13px/1.5 var(--mono); color: var(--soft); }
+
+.tariff { display: flex; align-items: center; gap: 14px; margin: 32px 0 0; padding: 18px 18px; background: var(--paper); border: 1px solid var(--line-2); }
+.dot { flex: none; width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid var(--ink); display: grid; place-items: center; }
+.dot::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--ink); }
+.tariff .t { flex: 1; min-width: 0; font: 400 16px/1.35 var(--serif); }
+.tariff .t small { display: block; font: 400 12px/1.4 var(--mono); color: var(--soft); margin-top: 2px; }
+.tariff .p { flex: none; font: 400 30px/1 var(--display); color: var(--acc); white-space: nowrap; }
+
+.agree { margin: 28px 0 0; padding: 0; border: 0; }
+.chk { position: relative; display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; cursor: pointer; font: 400 15px/1.5 var(--serif); }
+.chk + .chk { border-top: 1px solid var(--line); }
+.chk input { position: absolute; opacity: 0; width: 22px; height: 22px; margin: 0; left: 0; top: 13px; }
+.box { flex: none; width: 22px; height: 22px; margin-top: 1px; border: 1.5px solid var(--ink); background: var(--paper); display: grid; place-items: center; transition: background .15s, border-color .15s; }
+.box svg { width: 14px; height: 14px; opacity: 0; transition: opacity .15s; }
+.chk input:checked + .box { background: var(--ink); }
+.chk input:checked + .box svg { opacity: 1; }
+.chk input:focus-visible + .box { outline: 2px solid var(--acc); outline-offset: 2px; }
+.chk a { color: var(--acc); }
+.chk .opt { display: inline-block; margin-left: 4px; font: 400 12px/1 var(--mono); color: var(--soft); white-space: nowrap; }
+.chk.miss .box { border-color: var(--warn); box-shadow: 0 0 0 3px rgba(179, 38, 30, .15); }
+
+.pay { display: block; width: 100%; margin: 22px 0 0; padding: 20px 16px; border: 0; border-radius: 0; background: var(--ink); color: var(--ivory); font: 600 15px/1 var(--ui); letter-spacing: .18em; text-transform: uppercase; text-align: center; text-decoration: none; cursor: pointer; transition: background .15s; -webkit-appearance: none; appearance: none; }
+.pay:hover { background: var(--acc); }
+.pay[aria-disabled="true"] { background: var(--off); color: #fff; cursor: not-allowed; }
+.hint { margin: 10px 0 0; min-height: 1.5em; font: 400 13px/1.5 var(--mono); color: var(--soft); text-align: center; }
+.hint.warn { color: var(--warn); }
+
+.after { margin: 28px 0 0; padding: 16px 18px; border-left: 3px solid var(--acc); background: var(--paper); font: 400 15px/1.5 var(--serif); }
+.after p { margin: 0; }
+.after p + p { margin-top: 8px; font: 400 13px/1.5 var(--mono); color: var(--soft); }
+.after a { color: var(--acc); }
+
+footer { border-top: 1px solid var(--line); }
+footer .in { padding-block: 24px 40px; font: 400 12px/1.6 var(--mono); color: var(--soft); }
+footer nav { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-bottom: 10px; }
+footer p { margin: 0; }
+</style>
+</head>
+<body>
+<header class="top"><div class="in"><a class="name" href="https://morgundze.github.io/">Надежда Моргун</a></div></header>
+<main>
+<div class="in">
+  <p class="lbl">оплата участия</p>
+  <h1>Мастер-группа</h1>
+  <p class="sub">по личному бренду и блогу</p>
+  <p class="meta">30 ноября — 24 декабря 2026 · онлайн · zoom и закрытый чат в telegram</p>
+
+  <div class="tariff" role="radiogroup" aria-label="Тариф">
+    <span class="dot" role="radio" aria-checked="true"></span>
+    <span class="t">Мастер-группа<small>полная оплата</small></span>
+    <span class="p">88 000 ₽</span>
+  </div>
+
+  <fieldset class="agree">
+    <legend class="lbl" style="position:absolute;left:-9999px">Согласия</legend>
+    <label class="chk" data-req>
+      <input type="checkbox" id="c-oferta">
+      <span class="box" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2 7.5l3.2 3L12 3.5" fill="none" stroke="#F3EEE7" stroke-width="2"/></svg></span>
+      <span>Я соглашаюсь с условиями <a href="oferta.html" target="_blank">договора оферты</a> и принимаю её условия в полном объёме</span>
+    </label>
+    <label class="chk" data-req>
+      <input type="checkbox" id="c-pd">
+      <span class="box" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2 7.5l3.2 3L12 3.5" fill="none" stroke="#F3EEE7" stroke-width="2"/></svg></span>
+      <span>Я даю <a href="soglasie.html" target="_blank">согласие</a> на обработку моих персональных данных в соответствии с <a href="privacy.html" target="_blank">Политикой</a> обработки персональных данных</span>
+    </label>
+    <label class="chk">
+      <input type="checkbox" id="c-otzyv">
+      <span class="box" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2 7.5l3.2 3L12 3.5" fill="none" stroke="#F3EEE7" stroke-width="2"/></svg></span>
+      <span>Я даю <a href="otzyv.html" target="_blank">согласие</a> на публикацию отзыва в соответствии с <a href="privacy.html" target="_blank">политикой</a> обработки персональных данных <span class="opt">· по желанию</span></span>
+    </label>
+  </fieldset>
+
+  <a class="pay" id="pay" href="#" role="button" aria-disabled="true">Оплатить</a>
+  <p class="hint" id="hint" aria-live="polite">отметь согласие с офертой и на обработку данных — кнопка станет активной</p>
+
+  <div class="after">
+    <p>После оплаты напиши мне в Telegram <a href="https://t.me/morgundzehelp" target="_blank">@morgundzehelp</a> — пришлю ссылку в чат мастер-группы.</p>
+    <p>Оплата картой российского банка или через СБП — на странице ЮKassa, чек придёт на почту. Если удобнее иностранной картой — напиши в @morgundzehelp.</p>
+  </div>
+</div>
+</main>
+<footer><div class="in">
+<nav><a href="oferta.html">Публичная оферта</a><a href="privacy.html">Политика обработки персональных данных</a><a href="soglasie.html">Согласие на обработку персональных данных</a><a href="otzyv.html">Согласие на публикацию отзыва</a></nav>
+<p>ИП Моргун Надежда Павловна · ИНН 500173390720 · ОГРНИП 323774600679629 · morgundze.work@gmail.com</p>
+</div></footer>
+<script>
+(function () {
+  // многоразовая ссылка ЮKassa: «Мастер-группа по личному бренду и блогу», 88 000 ₽ (счёт 1501417-3)
+  var PAY_URL = "https://yookassa.ru/my/i/awg72uUZ_fON/l";
+  var pay = document.getElementById("pay");
+  var hint = document.getElementById("hint");
+  var req = Array.prototype.slice.call(document.querySelectorAll(".chk[data-req]"));
+  var HINT = hint.textContent;
+
+  function missing() { return req.filter(function (l) { return !l.querySelector("input").checked; }); }
+  function update() {
+    var m = missing();
+    req.forEach(function (l) { if (l.querySelector("input").checked) l.classList.remove("miss"); });
+    if (m.length) {
+      pay.setAttribute("aria-disabled", "true");
+      pay.removeAttribute("href");
+      if (!hint.classList.contains("warn")) hint.textContent = HINT;
+    } else {
+      pay.setAttribute("aria-disabled", "false");
+      pay.setAttribute("href", PAY_URL);
+      hint.classList.remove("warn");
+      hint.textContent = "";
+    }
+  }
+  pay.addEventListener("click", function (e) {
+    var m = missing();
+    if (m.length) {
+      e.preventDefault();
+      m.forEach(function (l) { l.classList.add("miss"); });
+      hint.classList.add("warn");
+      hint.textContent = "чтобы перейти к оплате, отметь согласие с офертой и на обработку данных";
+      m[0].scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  });
+  document.querySelectorAll(".chk input").forEach(function (i) { i.addEventListener("change", update); });
+  update();
+})();
+</script>
+</body>
+</html>
